@@ -42,7 +42,6 @@ nav{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wr
 nav a{text-decoration:none;color:#c7d2e8;font-weight:700;transition:.2s}
 nav a:hover{color:var(--cyan);text-shadow:0 0 12px #25e6ff}
 
-/* MOBILE MENU BUTTON */
 .menu-toggle{
 display:none;
 background:#10172a;
@@ -64,11 +63,23 @@ box-shadow:0 0 15px #25e6ff20;
 .btn-discord{background:linear-gradient(110deg,#7289ff,#5364d8);color:white;box-shadow:0 7px 25px #7289ff38}
 .btn-channel{background:linear-gradient(110deg,#12bfa5,#087f9c);color:white;box-shadow:0 7px 25px #12bfa538}
 
-.hero{min-height:570px;display:grid;place-items:center;text-align:center;padding:95px 6% 90px;position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 50% 100%,#174b9c44,transparent 55%)}
+/* HOME */
+.hero{
+min-height:570px;
+display:grid;
+place-items:center;
+text-align:center;
+padding:95px 6% 90px;
+position:relative;
+isolation:isolate;
+overflow:hidden;
+background:radial-gradient(ellipse at 50% 100%,#174b9c44,transparent 55%)
+}
+
 .hero:before,.hero:after{content:"";position:absolute;width:360px;height:360px;border:1px solid #25e6ff2a;transform:rotate(45deg);z-index:-1}
 .hero:before{left:-210px;top:70px;box-shadow:0 0 0 35px #25e6ff08,0 0 0 70px #25e6ff05}
 .hero:after{right:-220px;bottom:-80px;border-color:#ff365d35;box-shadow:0 0 0 35px #ff365d08,0 0 0 70px #ff365d05}
-.hero-inner{max-width:900px}
+.hero-inner{max-width:900px;position:relative;z-index:3}
 .eyebrow{display:inline-block;padding:8px 16px;border:1px solid #25e6ff65;border-radius:4px;color:var(--cyan);font-weight:800;letter-spacing:3px;font-size:14px;background:#25e6ff0c}
 .hero h1{font-family:Orbitron,sans-serif;font-size:clamp(48px,9vw,100px);line-height:1.1;margin:22px 0 12px;letter-spacing:2px;text-shadow:0 0 30px #25e6ff30}
 .hero h1 span{color:var(--red);text-shadow:0 0 28px #ff365d66}
@@ -78,6 +89,141 @@ box-shadow:0 0 15px #25e6ff20;
 .stat{min-width:145px;padding:12px 20px;background:#0d1729bb;border:1px solid #263b5b;border-radius:8px}
 .stat strong{display:block;font-family:Orbitron,sans-serif;color:var(--cyan);font-size:18px}
 .stat small{color:var(--muted);font-weight:700;letter-spacing:1px}
+
+/* CUTE FLOATING ROBOT */
+.robot{
+position:absolute;
+right:5%;
+top:50%;
+width:125px;
+height:165px;
+z-index:2;
+pointer-events:none;
+animation:robotFloat 3s ease-in-out infinite;
+filter:drop-shadow(0 0 15px #25e6ff55);
+}
+
+.robot-head{
+width:105px;
+height:85px;
+margin:auto;
+position:relative;
+background:linear-gradient(145deg,#35eaff,#356dff);
+border:3px solid #a5f7ff;
+border-radius:35px 35px 28px 28px;
+box-shadow:0 0 25px #25e6ff88,inset 0 -8px 15px #1538a5;
+}
+
+.robot-eyes{
+display:flex;
+justify-content:center;
+gap:17px;
+padding-top:29px;
+}
+
+.robot-eyes span{
+width:15px;
+height:19px;
+background:#fff;
+border-radius:50%;
+box-shadow:0 0 12px white;
+animation:eyeGlow 2s infinite alternate;
+}
+
+.robot-mouth{
+width:24px;
+height:8px;
+border-bottom:3px solid white;
+border-radius:50%;
+margin:8px auto;
+}
+
+.robot-body{
+width:75px;
+height:58px;
+margin:5px auto;
+background:linear-gradient(145deg,#9d63ff,#273cba);
+border:3px solid #b9a5ff;
+border-radius:18px;
+box-shadow:0 0 20px #9d63ff88;
+position:relative;
+}
+
+.robot-body:after{
+content:"CK";
+position:absolute;
+inset:17px 0;
+text-align:center;
+font-family:Orbitron,sans-serif;
+font-size:16px;
+font-weight:900;
+color:#fff;
+}
+
+.robot-antenna{
+width:4px;
+height:17px;
+background:#25e6ff;
+position:absolute;
+top:-19px;
+left:50%;
+}
+
+.robot-antenna:after{
+content:"";
+position:absolute;
+width:12px;
+height:12px;
+background:#ff365d;
+border-radius:50%;
+top:-9px;
+left:-4px;
+box-shadow:0 0 15px #ff365d;
+animation:antennaGlow 1s infinite alternate;
+}
+
+.robot-arm{
+position:absolute;
+width:15px;
+height:38px;
+background:#35cfff;
+border:2px solid #a5f7ff;
+border-radius:15px;
+top:100px;
+}
+
+.robot-arm.left{left:0;transform:rotate(20deg)}
+.robot-arm.right{right:0;transform:rotate(-20deg)}
+
+.robot-shadow{
+width:75px;
+height:10px;
+background:#25e6ff55;
+border-radius:50%;
+margin:-1px auto;
+filter:blur(7px);
+animation:shadowPulse 3s ease-in-out infinite;
+}
+
+@keyframes robotFloat{
+0%,100%{transform:translateY(-50%)}
+50%{transform:translateY(calc(-50% - 20px))}
+}
+
+@keyframes eyeGlow{
+from{box-shadow:0 0 5px white}
+to{box-shadow:0 0 15px white}
+}
+
+@keyframes antennaGlow{
+from{opacity:.6;box-shadow:0 0 5px #ff365d}
+to{opacity:1;box-shadow:0 0 18px #ff365d}
+}
+
+@keyframes shadowPulse{
+0%,100%{transform:scale(1);opacity:.5}
+50%{transform:scale(.7);opacity:.2}
+}
 
 section{padding:68px 7%;scroll-margin-top:80px}
 .section-head{text-align:center;margin-bottom:30px}
@@ -123,7 +269,7 @@ section{padding:68px 7%;scroll-margin-top:80px}
 footer{text-align:center;padding:25px 15px;border-top:1px solid #263451;color:#8e9bb3;background:#050812}
 footer b{color:var(--red)}
 
-/* MOBILE RESPONSIVE MENU */
+/* MOBILE */
 @media(max-width:780px){
 
 header{
@@ -173,18 +319,27 @@ font-size:16px;
 border-bottom:1px solid #263451;
 }
 
-header nav a:last-child{
-border-bottom:none;
-}
+header nav a:last-child{border-bottom:none}
+header>.btn{display:none}
 
-header>.btn{
-display:none;
-}
-
-.hero{min-height:520px;padding:70px 5%}
+.hero{min-height:520px;padding:55px 5% 65px}
 .hero p{font-size:19px}
 section{padding:52px 5%}
 .stat{min-width:125px}
+
+/* Robot sits above the Home heading on phones */
+.robot{
+position:relative;
+top:auto;
+right:auto;
+margin:0 auto 25px;
+transform:none;
+}
+
+@keyframes robotFloat{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-18px)}
+}
 
 }
 
@@ -224,18 +379,40 @@ section{padding:52px 5%}
 
 <section class="hero" id="home">
   <div class="hero-inner">
+
+    <!-- CUTE FLOATING ROBOT -->
+    <div class="robot">
+      <div class="robot-head">
+        <div class="robot-antenna"></div>
+        <div class="robot-eyes">
+          <span></span>
+          <span></span>
+        </div>
+        <div class="robot-mouth"></div>
+      </div>
+      <div class="robot-arm left"></div>
+      <div class="robot-arm right"></div>
+      <div class="robot-body"></div>
+      <div class="robot-shadow"></div>
+    </div>
+
     <div class="eyebrow">WELCOME TO MY GAMING WORLD, සාදරයෙන් පිළිගන්නවා GAMING CK වෙබ් අඩවියට</div>
+
     <h1>GAMING <span>CK</span></h1>
+
     <p>Epic gameplay, exciting live streams and non-stop gaming fun. Join the squad! අලුත් වෙනසකට රෙඩි වෙමු.</p>
+
     <div class="hero-actions">
       <a class="btn btn-red" href="https://youtube.com/@gaming-ck-yt/videos" target="_blank" rel="noopener">▶ WATCH VIDEOS</a>
       <a class="btn btn-cyan" href="https://youtube.com/@gaming-ck-yt/live" target="_blank" rel="noopener">🔴 WATCH LIVE</a>
     </div>
+
     <div class="stats">
       <div class="stat"><strong>ALL GAMES</strong><small>ONE COMMUNITY</small></div>
       <div class="stat"><strong>GAMING CK</strong><small>LET'S PLAY</small></div>
       <div class="stat"><strong>❤️ THANK YOU</strong><small>FOR THE SUPPORT</small></div>
     </div>
+
   </div>
 </section>
 
@@ -249,20 +426,37 @@ section{padding:52px 5%}
 </section>
 
 <section id="videos">
-  <div class="section-head"><div class="kicker">FRESH UPLOADS</div><h2 class="title">📺 LATEST <span>VIDEOS</span></h2><p class="section-desc">Watch the latest uploads from the Gaming CK channel.</p></div>
+  <div class="section-head">
+    <div class="kicker">FRESH UPLOADS</div>
+    <h2 class="title">📺 LATEST <span>VIDEOS</span></h2>
+    <p class="section-desc">Watch the latest uploads from the Gaming CK channel.</p>
+  </div>
+
   <div class="video-wrap">
     <iframe src="https://www.youtube.com/embed/videoseries?list=UUnO4ViTgT7TUVlpJXjU1piA" title="Gaming CK Latest Videos" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </div>
-  <p class="video-caption"><a class="btn btn-cyan" href="https://youtube.com/@gaming-ck-yt/videos" target="_blank" rel="noopener">SEE ALL VIDEOS ↗</a></p>
+
+  <p class="video-caption">
+    <a class="btn btn-cyan" href="https://youtube.com/@gaming-ck-yt/videos" target="_blank" rel="noopener">SEE ALL VIDEOS ↗</a>
+  </p>
 </section>
 
 <section id="playlists">
-  <div class="section-head"><div class="kicker">WATCH YOUR FAVOURITES</div><h2 class="title">🎬 GAMING <span>PLAYLISTS</span></h2><p class="section-desc">Choose a playlist and enjoy the videos. ❤️</p></div>
+  <div class="section-head">
+    <div class="kicker">WATCH YOUR FAVOURITES</div>
+    <h2 class="title">🎬 GAMING <span>PLAYLISTS</span></h2>
+    <p class="section-desc">Choose a playlist and enjoy the videos. ❤️</p>
+  </div>
+
   <div class="playlists">
     <article class="playlist-card"><iframe src="https://www.youtube.com/embed/videoseries?list=PLP9Iw43r7jFU" title="Gaming CK Playlist 1" loading="lazy" allowfullscreen></iframe><h3>🎮 PLAYLIST 01</h3></article>
+
     <article class="playlist-card"><iframe src="https://www.youtube.com/embed/videoseries?list=PLWPjpkaE-6t0Ec4PRIaAM6-UZBsSpO7_0" title="Gaming CK Playlist 2" loading="lazy" allowfullscreen></iframe><h3>🔥 PLAYLIST 02</h3></article>
+
     <article class="playlist-card"><iframe src="https://www.youtube.com/embed/videoseries?list=PLWPjpkaE-6t2MRKnQeFvd_pZK_RcwuwbM" title="Gaming CK Playlist 3" loading="lazy" allowfullscreen></iframe><h3>🚌 PLAYLIST 03</h3></article>
+
     <article class="playlist-card"><iframe src="https://www.youtube.com/embed/videoseries?list=PLWPjpkaE-6t3E4cJZ4XW0ZLtPcVmja3cW" title="Gaming CK Playlist 4" loading="lazy" allowfullscreen></iframe><h3>⛏️ PLAYLIST 04</h3></article>
+
     <article class="playlist-card"><iframe src="https://www.youtube.com/embed/videoseries?list=PLWPjpkaE-6t1vrewr_yCmSeMUtZCH5kdv" title="Gaming CK Playlist 5" loading="lazy" allowfullscreen></iframe><h3>🏆 PLAYLIST 05</h3></article>
   </div>
 </section>
@@ -313,11 +507,17 @@ section{padding:52px 5%}
 </section>
 
 <section id="about">
-  <div class="section-head"><div class="kicker">WHO WE ARE</div><h2 class="title">ABOUT <span>GAMING CK</span></h2></div>
-  <div class="about-box">Welcome to <strong>Gaming CK</strong>! ❤️🎮<br>
+  <div class="section-head">
+    <div class="kicker">WHO WE ARE</div>
+    <h2 class="title">ABOUT <span>GAMING CK</span></h2>
+  </div>
+
+  <div class="about-box">
+    Welcome to <strong>Gaming CK</strong>! ❤️🎮<br>
     We play different games, share gameplay videos and live streams with our awesome gaming community.<br><br>
     🚌 Bus Simulator Indonesia &nbsp; • &nbsp; ⛏️ Minecraft &nbsp; • &nbsp; 🔥 Free Fire<br>
-    🎮 And many more games!<br><br><strong>PLAY • ENJOY • SUBSCRIBE</strong>
+    🎮 And many more games!<br><br>
+    <strong>PLAY • ENJOY • SUBSCRIBE</strong>
   </div>
 </section>
 
@@ -330,9 +530,13 @@ section{padding:52px 5%}
 
   <div class="social-links">
     <a class="btn btn-red" href="https://youtube.com/@gaming-ck-yt" target="_blank" rel="noopener">▶ YOUTUBE CHANNEL</a>
+
     <a class="btn btn-cyan" href="https://youtube.com/@gaming-ck-yt?sub_confirmation=1" target="_blank" rel="noopener">＋ SUBSCRIBE</a>
+
     <a class="btn btn-whatsapp" href="https://chat.whatsapp.com/CpyztkBIQX1JmrVftpm7bJ" target="_blank" rel="noopener">💬 WHATSAPP GROUP</a>
+
     <a class="btn btn-discord" href="https://discord.gg/MhDxWGmbu" target="_blank" rel="noopener">🎮 DISCORD SERVER</a>
+
     <a class="btn btn-channel" href="https://whatsapp.com/channel/0029VbCNGxr1yT23bBhDk52J" target="_blank" rel="noopener">📢 WHATSAPP CHANNEL</a>
   </div>
 </section>
