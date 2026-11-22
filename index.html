@@ -79,7 +79,7 @@ background:radial-gradient(ellipse at 50% 100%,#174b9c44,transparent 55%)
 .hero:before,.hero:after{content:"";position:absolute;width:360px;height:360px;border:1px solid #25e6ff2a;transform:rotate(45deg);z-index:-1}
 .hero:before{left:-210px;top:70px;box-shadow:0 0 0 35px #25e6ff08,0 0 0 70px #25e6ff05}
 .hero:after{right:-220px;bottom:-80px;border-color:#ff365d35;box-shadow:0 0 0 35px #ff365d08,0 0 0 70px #ff365d05}
-.hero-inner{max-width:900px;position:relative;z-index:3}
+.hero-inner{max-width:900px;position:static;z-index:3}
 .eyebrow{display:inline-block;padding:8px 16px;border:1px solid #25e6ff65;border-radius:4px;color:var(--cyan);font-weight:800;letter-spacing:3px;font-size:14px;background:#25e6ff0c}
 .hero h1{font-family:Orbitron,sans-serif;font-size:clamp(48px,9vw,100px);line-height:1.1;margin:22px 0 12px;letter-spacing:2px;text-shadow:0 0 30px #25e6ff30}
 .hero h1 span{color:var(--red);text-shadow:0 0 28px #ff365d66}
@@ -90,134 +90,141 @@ background:radial-gradient(ellipse at 50% 100%,#174b9c44,transparent 55%)
 .stat strong{display:block;font-family:Orbitron,sans-serif;color:var(--cyan);font-size:18px}
 .stat small{color:var(--muted);font-weight:700;letter-spacing:1px}
 
-/* CUTE FLOATING ROBOT */
+/* 3D GAMING CK ROBOT */
 .robot{
 position:absolute;
-right:5%;
+right:7%;
 top:50%;
-width:125px;
-height:165px;
-z-index:2;
+width:145px;
+height:180px;
+z-index:5;
 pointer-events:none;
+perspective:600px;
 animation:robotFloat 3s ease-in-out infinite;
-filter:drop-shadow(0 0 15px #25e6ff55);
+filter:drop-shadow(0 18px 15px #0009);
 }
 
 .robot-head{
-width:105px;
-height:85px;
+width:112px;
+height:92px;
 margin:auto;
 position:relative;
-background:linear-gradient(145deg,#35eaff,#356dff);
 border:3px solid #a5f7ff;
-border-radius:35px 35px 28px 28px;
-box-shadow:0 0 25px #25e6ff88,inset 0 -8px 15px #1538a5;
+border-radius:36px 36px 29px 29px;
+background:linear-gradient(145deg,#a5faff 0%,#35eaff 25%,#1765dc 75%,#102d91 100%);
+box-shadow:inset 7px 7px 12px #ffffff80,inset -8px -9px 15px #081c77,0 0 25px #25e6ff88;
+transform:rotateY(-16deg) rotateX(7deg);
+}
+
+.robot-head:before{
+content:"";
+position:absolute;
+width:35px;
+height:17px;
+left:13px;
+top:9px;
+border-radius:50%;
+background:#ffffff70;
+filter:blur(5px);
 }
 
 .robot-eyes{
 display:flex;
 justify-content:center;
-gap:17px;
-padding-top:29px;
+gap:19px;
+padding-top:31px;
 }
 
 .robot-eyes span{
-width:15px;
-height:19px;
-background:#fff;
+width:16px;
+height:20px;
 border-radius:50%;
-box-shadow:0 0 12px white;
-animation:eyeGlow 2s infinite alternate;
+background:linear-gradient(145deg,#fff,#a9faff);
+box-shadow:0 0 13px white,inset -3px -3px 5px #4e9cff;
 }
 
 .robot-mouth{
-width:24px;
-height:8px;
+width:25px;
+height:9px;
 border-bottom:3px solid white;
 border-radius:50%;
 margin:8px auto;
 }
 
-.robot-body{
-width:75px;
-height:58px;
-margin:5px auto;
-background:linear-gradient(145deg,#9d63ff,#273cba);
-border:3px solid #b9a5ff;
-border-radius:18px;
-box-shadow:0 0 20px #9d63ff88;
-position:relative;
-}
-
-.robot-body:after{
-content:"CK";
-position:absolute;
-inset:17px 0;
-text-align:center;
-font-family:Orbitron,sans-serif;
-font-size:16px;
-font-weight:900;
-color:#fff;
-}
-
 .robot-antenna{
-width:4px;
-height:17px;
-background:#25e6ff;
+width:5px;
+height:20px;
+background:linear-gradient(90deg,#1765dc,#a5faff);
 position:absolute;
-top:-19px;
+top:-21px;
 left:50%;
+border-radius:5px;
 }
 
 .robot-antenna:after{
 content:"";
 position:absolute;
-width:12px;
-height:12px;
-background:#ff365d;
+width:13px;
+height:13px;
+background:radial-gradient(circle at 30% 30%,#fff,#ff365d 65%);
 border-radius:50%;
 top:-9px;
 left:-4px;
-box-shadow:0 0 15px #ff365d;
+box-shadow:0 0 18px #ff365d;
 animation:antennaGlow 1s infinite alternate;
+}
+
+.robot-body{
+width:78px;
+height:62px;
+margin:5px auto;
+position:relative;
+border:3px solid #c9b5ff;
+border-radius:19px;
+background:linear-gradient(145deg,#d4baff,#9d63ff 45%,#34208d);
+box-shadow:inset 6px 6px 10px #ffffff65,inset -7px -8px 12px #180b66,0 0 20px #9d63ff88;
+transform:rotateY(-12deg);
+}
+
+.robot-body:after{
+content:"CK";
+position:absolute;
+inset:18px 0;
+text-align:center;
+font-family:Orbitron,sans-serif;
+font-size:16px;
+font-weight:900;
+color:white;
+text-shadow:0 0 10px white;
 }
 
 .robot-arm{
 position:absolute;
-width:15px;
-height:38px;
-background:#35cfff;
+width:17px;
+height:40px;
+top:105px;
 border:2px solid #a5f7ff;
 border-radius:15px;
-top:100px;
+background:linear-gradient(90deg,#1450b9,#49eaff,#1765dc);
+box-shadow:inset 3px 2px 5px #ffffff80,0 0 10px #25e6ff66;
 }
 
-.robot-arm.left{left:0;transform:rotate(20deg)}
-.robot-arm.right{right:0;transform:rotate(-20deg)}
+.robot-arm.left{left:4px;transform:rotate(20deg)}
+.robot-arm.right{right:4px;transform:rotate(-20deg)}
 
 .robot-shadow{
-width:75px;
-height:10px;
-background:#25e6ff55;
+width:80px;
+height:12px;
+margin:2px auto;
+background:#25e6ff88;
 border-radius:50%;
-margin:-1px auto;
-filter:blur(7px);
-animation:shadowPulse 3s ease-in-out infinite;
+filter:blur(8px);
+animation:shadowPulse 3s infinite;
 }
 
 @keyframes robotFloat{
-0%,100%{transform:translateY(-50%)}
-50%{transform:translateY(calc(-50% - 20px))}
-}
-
-@keyframes eyeGlow{
-from{box-shadow:0 0 5px white}
-to{box-shadow:0 0 15px white}
-}
-
-@keyframes antennaGlow{
-from{opacity:.6;box-shadow:0 0 5px #ff365d}
-to{opacity:1;box-shadow:0 0 18px #ff365d}
+0%,100%{transform:translateY(-50%) rotateY(-5deg)}
+50%{transform:translateY(calc(-50% - 20px)) rotateY(5deg)}
 }
 
 @keyframes shadowPulse{
@@ -225,6 +232,12 @@ to{opacity:1;box-shadow:0 0 18px #ff365d}
 50%{transform:scale(.7);opacity:.2}
 }
 
+@keyframes antennaGlow{
+from{opacity:.6;box-shadow:0 0 5px #ff365d}
+to{opacity:1;box-shadow:0 0 18px #ff365d}
+}
+
+/* SECTIONS */
 section{padding:68px 7%;scroll-margin-top:80px}
 .section-head{text-align:center;margin-bottom:30px}
 .kicker{color:var(--red);font-weight:800;letter-spacing:3px;font-size:13px}
@@ -269,7 +282,7 @@ section{padding:68px 7%;scroll-margin-top:80px}
 footer{text-align:center;padding:25px 15px;border-top:1px solid #263451;color:#8e9bb3;background:#050812}
 footer b{color:var(--red)}
 
-/* MOBILE */
+/* MOBILE MENU */
 @media(max-width:780px){
 
 header{
@@ -322,23 +335,31 @@ border-bottom:1px solid #263451;
 header nav a:last-child{border-bottom:none}
 header>.btn{display:none}
 
-.hero{min-height:520px;padding:55px 5% 65px}
+.hero{min-height:520px;padding:70px 5%}
 .hero p{font-size:19px}
 section{padding:52px 5%}
 .stat{min-width:125px}
 
-/* Robot sits above the Home heading on phones */
+/* ROBOT ON THE SIDE FOR MOBILE */
 .robot{
-position:relative;
-top:auto;
-right:auto;
-margin:0 auto 25px;
-transform:none;
+position:absolute;
+top:20px;
+right:5px;
+width:110px;
+height:145px;
+transform:scale(.72);
+transform-origin:top right;
+animation:robotMobileFloat 3s ease-in-out infinite;
 }
 
-@keyframes robotFloat{
-0%,100%{transform:translateY(0)}
-50%{transform:translateY(-18px)}
+@keyframes robotMobileFloat{
+0%,100%{transform:scale(.72) translateY(0)}
+50%{transform:scale(.72) translateY(-14px)}
+}
+
+.hero-inner .eyebrow{
+max-width:80%;
+margin-right:auto;
 }
 
 }
@@ -347,6 +368,12 @@ transform:none;
 .logo{font-size:18px}
 .menu-toggle{font-size:21px;padding:7px 11px}
 .hero h1{font-size:43px}
+}
+
+/* SMALL DESKTOP SCREENS */
+@media(min-width:781px) and (max-width:1050px){
+.robot{right:2%;transform:scale(.8) translateY(-50%);transform-origin:center}
+.hero-inner{max-width:75%}
 }
 </style>
 </head>
@@ -378,24 +405,24 @@ transform:none;
 <main>
 
 <section class="hero" id="home">
-  <div class="hero-inner">
 
-    <!-- CUTE FLOATING ROBOT -->
-    <div class="robot">
-      <div class="robot-head">
-        <div class="robot-antenna"></div>
-        <div class="robot-eyes">
-          <span></span>
-          <span></span>
-        </div>
-        <div class="robot-mouth"></div>
+  <!-- 3D FLOATING ROBOT -->
+  <div class="robot">
+    <div class="robot-head">
+      <div class="robot-antenna"></div>
+      <div class="robot-eyes">
+        <span></span>
+        <span></span>
       </div>
-      <div class="robot-arm left"></div>
-      <div class="robot-arm right"></div>
-      <div class="robot-body"></div>
-      <div class="robot-shadow"></div>
+      <div class="robot-mouth"></div>
     </div>
+    <div class="robot-arm left"></div>
+    <div class="robot-arm right"></div>
+    <div class="robot-body"></div>
+    <div class="robot-shadow"></div>
+  </div>
 
+  <div class="hero-inner">
     <div class="eyebrow">WELCOME TO MY GAMING WORLD, සාදරයෙන් පිළිගන්නවා GAMING CK වෙබ් අඩවියට</div>
 
     <h1>GAMING <span>CK</span></h1>
@@ -412,7 +439,6 @@ transform:none;
       <div class="stat"><strong>GAMING CK</strong><small>LET'S PLAY</small></div>
       <div class="stat"><strong>❤️ THANK YOU</strong><small>FOR THE SUPPORT</small></div>
     </div>
-
   </div>
 </section>
 
@@ -530,13 +556,9 @@ transform:none;
 
   <div class="social-links">
     <a class="btn btn-red" href="https://youtube.com/@gaming-ck-yt" target="_blank" rel="noopener">▶ YOUTUBE CHANNEL</a>
-
     <a class="btn btn-cyan" href="https://youtube.com/@gaming-ck-yt?sub_confirmation=1" target="_blank" rel="noopener">＋ SUBSCRIBE</a>
-
     <a class="btn btn-whatsapp" href="https://chat.whatsapp.com/CpyztkBIQX1JmrVftpm7bJ" target="_blank" rel="noopener">💬 WHATSAPP GROUP</a>
-
     <a class="btn btn-discord" href="https://discord.gg/MhDxWGmbu" target="_blank" rel="noopener">🎮 DISCORD SERVER</a>
-
     <a class="btn btn-channel" href="https://whatsapp.com/channel/0029VbCNGxr1yT23bBhDk52J" target="_blank" rel="noopener">📢 WHATSAPP CHANNEL</a>
   </div>
 </section>
