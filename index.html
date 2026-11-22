@@ -6,6 +6,906 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#070914">
 <title>Gaming CK | Official Gaming Hub</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#070914;
+  --panel:#10172a;
+  --cyan:#25e6ff;
+  --red:#ff365d;
+  --purple:#9d63ff;
+  --muted:#aab5cc;
+  --white:#f7f9ff;
+}
+
+* {
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:90px;
+}
+
+body {
+  background-color:var(--bg);
+  background-image:
+    linear-gradient(180deg,rgba(5,8,20,.88),rgba(5,8,20,.94)),
+    url('images/background.jpg');
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  color:var(--white);
+  font-family:'Rajdhani',Arial,sans-serif;
+  font-size:18px;
+  overflow-x:hidden;
+}
+
+body:before {
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  background:
+    radial-gradient(circle at 12% 18%,#124cff20,transparent 27%),
+    radial-gradient(circle at 90% 42%,#a020ff18,transparent 25%),
+    linear-gradient(#ffffff04 1px,transparent 1px),
+    linear-gradient(90deg,#ffffff04 1px,transparent 1px);
+  background-size:auto,auto,42px 42px,42px 42px;
+}
+
+body > * {
+  position:relative;
+  z-index:1;
+}
+
+a { color:inherit; }
+
+header {
+  position:sticky;
+  top:0;
+  z-index:20;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:14px 6%;
+  background:rgba(7,9,20,.83);
+  backdrop-filter:blur(22px);
+  -webkit-backdrop-filter:blur(22px);
+  border-bottom:1px solid #25e6ff35;
+  box-shadow:0 8px 35px #0008;
+}
+
+.logo {
+  font-family:Orbitron,sans-serif;
+  font-size:23px;
+  font-weight:900;
+  letter-spacing:1px;
+  white-space:nowrap;
+  text-shadow:0 0 18px #25e6ff75;
+}
+
+.logo b { color:var(--red); }
+
+nav {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+nav a {
+  text-decoration:none;
+  color:#c7d2e8;
+  font-weight:700;
+  transition:.25s;
+}
+
+nav a:hover {
+  color:var(--cyan);
+  text-shadow:0 0 12px var(--cyan);
+}
+
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  padding:12px 22px;
+  border-radius:9px;
+  text-decoration:none;
+  font-weight:800;
+  letter-spacing:.5px;
+  border:1px solid transparent;
+  transition:.3s;
+  cursor:pointer;
+}
+
+.btn:hover {
+  transform:translateY(-4px);
+  filter:brightness(1.2);
+}
+
+.btn-red {
+  background:linear-gradient(110deg,#ff315c,#e71948);
+  color:white;
+  box-shadow:0 7px 25px #ff315c38;
+}
+
+.btn-cyan {
+  border-color:var(--cyan);
+  color:var(--cyan);
+  background:#25e6ff0c;
+  box-shadow:inset 0 0 18px #25e6ff0b;
+}
+
+.btn-whatsapp {
+  background:linear-gradient(110deg,#20c96b,#0b9e50);
+  color:white;
+}
+
+.btn-discord {
+  background:linear-gradient(110deg,#7289ff,#5364d8);
+  color:white;
+}
+
+.btn-channel {
+  background:linear-gradient(110deg,#12bfa5,#087f9c);
+  color:white;
+}
+
+/* HERO */
+
+.hero {
+  min-height:650px;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:100px 6%;
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background:
+    linear-gradient(180deg,rgba(5,8,20,.2),rgba(5,8,20,.65)),
+    radial-gradient(ellipse at 50% 100%,#174b9c55,transparent 60%);
+}
+
+.hero:before,
+.hero:after {
+  content:"";
+  position:absolute;
+  width:360px;
+  height:360px;
+  border:1px solid #25e6ff35;
+  transform:rotate(45deg);
+  z-index:-1;
+  animation:float 8s ease-in-out infinite;
+}
+
+.hero:before {
+  left:-210px;
+  top:70px;
+  box-shadow:0 0 0 35px #25e6ff08,0 0 0 70px #25e6ff05;
+}
+
+.hero:after {
+  right:-220px;
+  bottom:-80px;
+  border-color:#ff365d45;
+  box-shadow:0 0 0 35px #ff365d08,0 0 0 70px #ff365d05;
+  animation-delay:2s;
+}
+
+@keyframes float {
+  0%,100% { transform:rotate(45deg) translateY(0); }
+  50% { transform:rotate(45deg) translateY(-25px); }
+}
+
+.hero-inner {
+  max-width:950px;
+}
+
+.eyebrow {
+  display:inline-block;
+  padding:9px 19px;
+  border:1px solid #25e6ff75;
+  border-radius:30px;
+  color:var(--cyan);
+  font-weight:800;
+  letter-spacing:3px;
+  font-size:14px;
+  background:#25e6ff12;
+  box-shadow:0 0 25px #25e6ff15;
+}
+
+.hero h1 {
+  font-family:Orbitron,sans-serif;
+  font-size:clamp(48px,9vw,105px);
+  line-height:1.1;
+  margin:25px 0 15px;
+  letter-spacing:2px;
+  text-shadow:0 0 30px #25e6ff50;
+}
+
+.hero h1 span {
+  color:var(--red);
+  text-shadow:0 0 28px #ff365d99;
+}
+
+.hero p {
+  font-size:23px;
+  color:#c3cee2;
+  margin:0 auto 30px;
+  max-width:650px;
+}
+
+.hero-actions {
+  display:flex;
+  gap:14px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.stats {
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+  margin-top:50px;
+}
+
+.stat {
+  min-width:155px;
+  padding:17px 22px;
+  background:rgba(13,23,41,.75);
+  backdrop-filter:blur(12px);
+  border:1px solid #263b5b;
+  border-radius:12px;
+  transition:.3s;
+}
+
+.stat:hover {
+  border-color:var(--cyan);
+  transform:translateY(-6px);
+  box-shadow:0 0 25px #25e6ff22;
+}
+
+.stat strong {
+  display:block;
+  font-family:Orbitron,sans-serif;
+  color:var(--cyan);
+  font-size:17px;
+}
+
+.stat small {
+  color:var(--muted);
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+/* SECTIONS */
+
+section {
+  padding:75px 7%;
+  scroll-margin-top:85px;
+}
+
+.section-head {
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.kicker {
+  color:var(--red);
+  font-weight:800;
+  letter-spacing:3px;
+  font-size:13px;
+}
+
+.title {
+  font-family:Orbitron,sans-serif;
+  font-size:clamp(24px,4vw,35px);
+  margin:10px 0;
+}
+
+.title span { color:var(--cyan); }
+
+.section-desc {
+  color:var(--muted);
+  max-width:650px;
+  margin:auto;
+}
+
+/* LIVE */
+
+.live-panel {
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+  padding:55px 22px;
+  border:1px solid #ff365d88;
+  border-radius:18px;
+  background:
+    radial-gradient(circle at 50% 0,#ff365d35,transparent 55%),
+    linear-gradient(120deg,#190d1b,#11172b,#0d1325);
+  box-shadow:0 0 45px #ff365d18;
+}
+
+.live-panel h2 {
+  font-family:Orbitron,sans-serif;
+  font-size:clamp(23px,4vw,34px);
+  margin:15px 0;
+}
+
+.live-panel p {
+  color:var(--muted);
+  margin-bottom:22px;
+}
+
+.live-dot {
+  display:inline-block;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#ff365d;
+  box-shadow:0 0 13px #ff365d;
+  margin-right:8px;
+  animation:pulse 1.3s infinite;
+}
+
+@keyframes pulse {
+  50% { opacity:.35; box-shadow:0 0 25px #ff365d; }
+}
+
+/* VIDEOS */
+
+.video-wrap {
+  max-width:850px;
+  margin:auto;
+  padding:12px;
+  background:linear-gradient(135deg,#25e6ff77,#9d63ff77,#ff365d77);
+  border-radius:16px;
+  box-shadow:0 15px 40px #0008;
+}
+
+.video-wrap iframe,
+.playlist-card iframe {
+  display:block;
+  width:100%;
+  aspect-ratio:16/9;
+  border:0;
+  border-radius:9px;
+  background:#050914;
+}
+
+.video-caption {
+  text-align:center;
+  margin-top:18px;
+  color:var(--muted);
+}
+
+/* PLAYLISTS */
+
+.playlists {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:22px;
+}
+
+.playlist-card {
+  overflow:hidden;
+  background:rgba(16,23,42,.83);
+  backdrop-filter:blur(12px);
+  border:1px solid #293d60;
+  border-radius:15px;
+  padding:11px;
+  transition:.3s;
+}
+
+.playlist-card:hover {
+  transform:translateY(-8px);
+  border-color:var(--purple);
+  box-shadow:0 12px 35px #9d63ff25;
+}
+
+.playlist-card h3 {
+  font-family:Orbitron,sans-serif;
+  font-size:15px;
+  padding:16px 8px 10px;
+  color:#e5dcff;
+}
+
+/* DOWNLOADS */
+
+.downloads {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:24px;
+}
+
+.download-card {
+  overflow:hidden;
+  background:rgba(16,23,42,.88);
+  backdrop-filter:blur(12px);
+  border:1px solid #293d60;
+  border-radius:15px;
+  transition:.3s;
+}
+
+.download-card:hover {
+  transform:translateY(-8px);
+  border-color:var(--cyan);
+  box-shadow:0 15px 35px #25e6ff20;
+}
+
+.download-thumb {
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  display:block;
+  background:#0b1427;
+  transition:.4s;
+}
+
+.download-card:hover .download-thumb {
+  transform:scale(1.04);
+}
+
+.download-info {
+  padding:18px;
+}
+
+.download-info h3 {
+  font-family:Orbitron,sans-serif;
+  font-size:16px;
+  margin-bottom:9px;
+}
+
+.download-info p {
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.5;
+  min-height:42px;
+}
+
+.download-meta {
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  align-items:center;
+  margin:15px 0;
+  color:#aab5cc;
+  font-size:14px;
+}
+
+.download-tag {
+  color:var(--cyan);
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+.download-btn,
+.preview-btn {
+  display:flex;
+  width:100%;
+  margin-top:10px;
+}
+
+.preview-btn {
+  background:linear-gradient(110deg,#ff315c,#e71948);
+  color:#fff;
+  box-shadow:0 7px 25px #ff315c38;
+}
+
+.download-note {
+  max-width:760px;
+  margin:25px auto 0;
+  text-align:center;
+  color:var(--muted);
+  font-size:15px;
+}
+
+/* ABOUT */
+
+.about-box {
+  max-width:850px;
+  margin:auto;
+  text-align:center;
+  padding:40px 28px;
+  background:rgba(17,27,48,.85);
+  backdrop-filter:blur(15px);
+  border:1px solid #263b5d;
+  border-radius:16px;
+  color:#c7d2e8;
+  line-height:1.9;
+  box-shadow:0 12px 35px #0005;
+}
+
+.about-box strong { color:var(--cyan); }
+
+/* SOCIAL */
+
+.social { text-align:center; }
+
+.social-links {
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+/* FOOTER */
+
+footer {
+  text-align:center;
+  padding:30px 15px;
+  border-top:1px solid #263451;
+  color:#8e9bb3;
+  background:rgba(5,8,18,.9);
+}
+
+footer b { color:var(--red); }
+
+/* SCROLL ANIMATION */
+
+.reveal {
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity .7s ease,transform .7s ease;
+}
+
+.reveal.show {
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:780px) {
+  header {
+    justify-content:center;
+    padding:13px 4%;
+    flex-wrap:wrap;
+  }
+
+  nav { gap:12px; }
+
+  header>.btn { display:none; }
+}
+
+@media(max-width:560px) {
+  .hero {
+    min-height:530px;
+    padding:75px 5%;
+  }
+
+  .hero p { font-size:19px; }
+
+  section { padding:55px 5%; }
+
+  .stat { min-width:125px; }
+
+  .logo { font-size:20px; }
+
+  nav a { font-size:15px; }
+
+  .downloads,
+  .playlists {
+    grid-template-columns:1fr;
+  }
+
+  .social-links .btn {
+    width:100%;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation-duration:.01ms !important;
+    transition-duration:.01ms !important;
+    scroll-behavior:auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">GAMING <b>CK</b> 🎮</div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#videos">Videos</a>
+    <a href="#playlists">Playlists</a>
+    <a href="#downloads">Downloads</a>
+    <a href="#live">Live</a>
+    <a href="#about">About</a>
+  </nav>
+
+  <a class="btn btn-red" href="https://youtube.com/@gaming-ck-yt?sub_confirmation=1" target="_blank" rel="noopener">▶ SUBSCRIBE</a>
+</header>
+
+<main>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+  <div class="hero-inner">
+
+    <div class="eyebrow">WELCOME TO MY GAMING WORLD</div>
+
+    <h1>GAMING <span>CK</span></h1>
+
+    <p>Epic gameplay, exciting live streams and non-stop gaming fun. Join the squad!</p>
+
+    <div class="hero-actions">
+      <a class="btn btn-red" href="https://youtube.com/@gaming-ck-yt/videos" target="_blank" rel="noopener">▶ WATCH VIDEOS</a>
+      <a class="btn btn-cyan" href="https://youtube.com/@gaming-ck-yt/live" target="_blank" rel="noopener">🔴 WATCH LIVE</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <strong>ALL GAMES</strong>
+        <small>ONE COMMUNITY</small>
+      </div>
+
+      <div class="stat">
+        <strong>GAMING CK</strong>
+        <small>LET'S PLAY</small>
+      </div>
+
+      <div class="stat">
+        <strong>❤️ THANK YOU</strong>
+        <small>FOR THE SUPPORT</small>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LIVE -->
+
+<section id="live" class="reveal">
+  <div class="live-panel">
+    <div class="kicker"><span class="live-dot"></span>LIVE STREAM</div>
+
+    <h2>JOIN THE GAME WITH <span style="color:var(--red)">GAMING CK</span></h2>
+
+    <p>Come hang out, watch the gameplay and be part of the community!</p>
+
+    <a class="btn btn-red" href="https://youtube.com/@gaming-ck-yt/live" target="_blank" rel="noopener">▶ WATCH LIVE NOW</a>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+
+<section id="videos" class="reveal">
+  <div class="section-head">
+    <div class="kicker">FRESH UPLOADS</div>
+    <h2 class="title">📺 LATEST <span>VIDEOS</span></h2>
+    <p class="section-desc">Watch the latest uploads from the Gaming CK channel.</p>
+  </div>
+
+  <div class="video-wrap">
+    <iframe
+      src="https://www.youtube.com/embed/videoseries?list=UUnO4ViTgT7TUVlpJXjU1piA"
+      title="Gaming CK Latest Videos"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <p class="video-caption">
+    <a class="btn btn-cyan" href="https://youtube.com/@gaming-ck-yt/videos" target="_blank" rel="noopener">SEE ALL VIDEOS ↗</a>
+  </p>
+</section>
+
+<!-- PLAYLISTS -->
+
+<section id="playlists" class="reveal">
+  <div class="section-head">
+    <div class="kicker">WATCH YOUR FAVOURITES</div>
+    <h2 class="title">🎬 GAMING <span>PLAYLISTS</span></h2>
+    <p class="section-desc">Choose a playlist and enjoy the videos. ❤️</p>
+  </div>
+
+  <div class="playlists">
+
+    <article class="playlist-card">
+      <iframe src="https://www.youtube.com/embed/videoseries?list=PLP9Iw43r7jFU" title="Gaming CK Playlist 1" loading="lazy" allowfullscreen></iframe>
+      <h3>🎮 PLAYLIST 01</h3>
+    </article>
+
+    <article class="playlist-card">
+      <iframe src="https://www.youtube.com/embed/videoseries?list=PLWPjpkaE-6t0Ec4PRIaAM6-UZBsSpO7_0" title="Gaming CK Playlist 2" loading="lazy" allowfullscreen></iframe>
+      <h3>🔥 PLAYLIST 02</h3>
+    </article>
+
+    <article class="playlist-card">
+      <iframe src="https://www.youtube.com/embed/videoseries?list=PLWPjpkaE-6t2MRKnQeFvd_pZK_RcwuwbM" title="Gaming CK Playlist 3" loading="lazy" allowfullscreen></iframe>
+      <h3>🚌 PLAYLIST 03</h3>
+    </article>
+
+    <article class="playlist-card">
+      <iframe src="https://www.youtube.com/embed/videoseries?list=PLWPjpkaE-6t3E4cJZ4XW0ZLtPcVmja3cW" title="Gaming CK Playlist 4" loading="lazy" allowfullscreen></iframe>
+      <h3>⛏️ PLAYLIST 04</h3>
+    </article>
+
+    <article class="playlist-card">
+      <iframe src="https://www.youtube.com/embed/videoseries?list=PLWPjpkaE-6t1vrewr_yCmSeMUtZCH5kdv" title="Gaming CK Playlist 5" loading="lazy" allowfullscreen></iframe>
+      <h3>🏆 PLAYLIST 05</h3>
+    </article>
+
+  </div>
+</section>
+
+<!-- DOWNLOADS -->
+
+<section id="downloads" class="reveal">
+
+  <div class="section-head">
+    <div class="kicker">FILES & EXTRAS</div>
+    <h2 class="title">📥 GAMING <span>DOWNLOADS</span></h2>
+    <p class="section-desc">Download bus mods, skins, wallpapers and other files shared by Gaming CK.</p>
+  </div>
+
+  <div class="downloads">
+
+    <article class="download-card">
+      <img class="download-thumb" src="images/bus.jpg" alt="Bus mod thumbnail">
+
+      <div class="download-info">
+        <h3>🚌 Sri Lanka Bus Mod</h3>
+        <p>Add your bus mod details here. You can edit this description.</p>
+
+        <div class="download-meta">
+          <span class="download-tag">FREE DOWNLOAD</span>
+          <span>File: ZIP</span>
+        </div>
+
+        <a class="btn btn-cyan download-btn" href="YOUR_MEDIAFIRE_LINK_HERE" target="_blank" rel="noopener">⬇ DOWNLOAD NOW</a>
+      </div>
+    </article>
+
+    <article class="download-card">
+      <img class="download-thumb" src="images/bus-mod.jpg" alt="Bus skin thumbnail">
+
+      <div class="download-info">
+        <h3>🎨 BUSSID Bus Skin</h3>
+        <p>Add the skin name and a short description here.</p>
+
+        <div class="download-meta">
+          <span class="download-tag">FREE DOWNLOAD</span>
+          <span>File: PNG</span>
+        </div>
+
+        <a class="btn btn-cyan download-btn" href="https://www.mediafire.com/file/4p0od7nhcjd3frm/Gaming_CK_1K_gift__%25F0%259F%2598%2587%25E2%259D%25A4%25EF%25B8%258F.zip/file" target="_blank" rel="noopener">⬇ DOWNLOAD NOW</a>
+
+        <a class="btn preview-btn" href="https://youtu.be/gDN6StBCm8I" target="_blank" rel="noopener">▶ PW VIDEO</a>
+      </div>
+    </article>
+
+    <article class="download-card">
+      <img class="download-thumb" src="images/wallpaper.jpg" alt="Gaming wallpaper thumbnail">
+
+      <div class="download-info">
+        <h3>⚡ Gaming Wallpaper</h3>
+        <p>Add details about the wallpaper or any other file here.</p>
+
+        <div class="download-meta">
+          <span class="download-tag">FREE DOWNLOAD</span>
+          <span>File: JPG</span>
+        </div>
+
+        <a class="btn btn-cyan download-btn" href="YOUR_MEDIAFIRE_LINK_HERE" target="_blank" rel="noopener">⬇ DOWNLOAD NOW</a>
+      </div>
+    </article>
+
+  </div>
+
+  <p class="download-note">More files coming soon! ❤️ If a download link does not work, please check the link you added.</p>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="reveal">
+  <div class="section-head">
+    <div class="kicker">WHO WE ARE</div>
+    <h2 class="title">ABOUT <span>GAMING CK</span></h2>
+  </div>
+
+  <div class="about-box">
+    Welcome to <strong>Gaming CK</strong>! ❤️🎮<br>
+
+    We play different games, share gameplay videos and live streams with our awesome gaming community.<br><br>
+
+    🚌 Bus Simulator Indonesia &nbsp; • &nbsp; ⛏️ Minecraft &nbsp; • &nbsp; 🔥 Free Fire<br>
+
+    🎮 And many more games!<br><br>
+
+    <strong>PLAY • ENJOY • SUBSCRIBE</strong>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+
+<section class="social reveal">
+  <div class="section-head">
+    <div class="kicker">STAY CONNECTED</div>
+    <h2 class="title">JOIN <span>GAMING CK</span></h2>
+    <p class="section-desc">Join our gaming community on WhatsApp and Discord. ❤️🎮</p>
+  </div>
+
+  <div class="social-links">
+
+    <a class="btn btn-red" href="https://youtube.com/@gaming-ck-yt" target="_blank" rel="noopener">▶ YOUTUBE CHANNEL</a>
+
+    <a class="btn btn-cyan" href="https://youtube.com/@gaming-ck-yt?sub_confirmation=1" target="_blank" rel="noopener">＋ SUBSCRIBE</a>
+
+    <a class="btn btn-whatsapp" href="https://chat.whatsapp.com/CpyztkBIQX1JmrVftpm7bJ" target="_blank" rel="noopener">💬 WHATSAPP GROUP</a>
+
+    <a class="btn btn-discord" href="https://discord.gg/MhDxWGmbu" target="_blank" rel="noopener">🎮 DISCORD SERVER</a>
+
+    <a class="btn btn-channel" href="https://whatsapp.com/channel/0029VbCNGxr1yT23bBhDk52J" target="_blank" rel="noopener">📢 WHATSAPP CHANNEL</a>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  © 2026 GAMING <b>CK</b> | MADE WITH ❤️ FOR GAMERS
+</footer>
+
+<script>
+/* SCROLL REVEAL */
+
+const revealElements = document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12
+  });
+
+  revealElements.forEach(element => {
+    observer.observe(element);
+  });
+} else {
+  revealElements.forEach(element => {
+    element.classList.add('show');
+  });
+}
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#070914">
+<title>Gaming CK | Official Gaming Hub</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap');
 :root{--bg:#070914;--panel:#10172a;--cyan:#25e6ff;--red:#ff365d;--purple:#9d63ff;--muted:#aab5cc;--white:#f7f9ff}
