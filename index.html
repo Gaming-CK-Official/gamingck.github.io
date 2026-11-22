@@ -79,7 +79,7 @@ background:radial-gradient(ellipse at 50% 100%,#174b9c44,transparent 55%)
 .hero:before,.hero:after{content:"";position:absolute;width:360px;height:360px;border:1px solid #25e6ff2a;transform:rotate(45deg);z-index:-1}
 .hero:before{left:-210px;top:70px;box-shadow:0 0 0 35px #25e6ff08,0 0 0 70px #25e6ff05}
 .hero:after{right:-220px;bottom:-80px;border-color:#ff365d35;box-shadow:0 0 0 35px #ff365d08,0 0 0 70px #ff365d05}
-.hero-inner{max-width:900px;position:static;z-index:3}
+.hero-inner{max-width:700px;position:relative;z-index:3}
 .eyebrow{display:inline-block;padding:8px 16px;border:1px solid #25e6ff65;border-radius:4px;color:var(--cyan);font-weight:800;letter-spacing:3px;font-size:14px;background:#25e6ff0c}
 .hero h1{font-family:Orbitron,sans-serif;font-size:clamp(48px,9vw,100px);line-height:1.1;margin:22px 0 12px;letter-spacing:2px;text-shadow:0 0 30px #25e6ff30}
 .hero h1 span{color:var(--red);text-shadow:0 0 28px #ff365d66}
@@ -128,13 +128,7 @@ background:#ffffff70;
 filter:blur(5px);
 }
 
-.robot-eyes{
-display:flex;
-justify-content:center;
-gap:19px;
-padding-top:31px;
-}
-
+.robot-eyes{display:flex;justify-content:center;gap:19px;padding-top:31px}
 .robot-eyes span{
 width:16px;
 height:20px;
@@ -143,24 +137,8 @@ background:linear-gradient(145deg,#fff,#a9faff);
 box-shadow:0 0 13px white,inset -3px -3px 5px #4e9cff;
 }
 
-.robot-mouth{
-width:25px;
-height:9px;
-border-bottom:3px solid white;
-border-radius:50%;
-margin:8px auto;
-}
-
-.robot-antenna{
-width:5px;
-height:20px;
-background:linear-gradient(90deg,#1765dc,#a5faff);
-position:absolute;
-top:-21px;
-left:50%;
-border-radius:5px;
-}
-
+.robot-mouth{width:25px;height:9px;border-bottom:3px solid white;border-radius:50%;margin:8px auto}
+.robot-antenna{width:5px;height:20px;background:linear-gradient(90deg,#1765dc,#a5faff);position:absolute;top:-21px;left:50%;border-radius:5px}
 .robot-antenna:after{
 content:"";
 position:absolute;
@@ -237,6 +215,143 @@ from{opacity:.6;box-shadow:0 0 5px #ff365d}
 to{opacity:1;box-shadow:0 0 18px #ff365d}
 }
 
+/* 3D GAMING CONTROLLER */
+.controller-3d{
+position:absolute;
+left:4%;
+top:50%;
+width:190px;
+height:145px;
+z-index:5;
+pointer-events:none;
+animation:controllerFloat 4s ease-in-out infinite;
+filter:drop-shadow(0 15px 20px #0009) drop-shadow(0 0 13px #25e6ff55);
+}
+
+.controller-body{
+position:absolute;
+width:170px;
+height:100px;
+left:10px;
+top:15px;
+border-radius:38px 38px 48px 48px;
+background:linear-gradient(145deg,#46516f 0%,#202a43 35%,#101525 70%,#080c18);
+border:2px solid #7184a9;
+box-shadow:
+inset 0 5px 12px #ffffff55,
+inset 0 -10px 15px #050711,
+0 12px 25px #0009;
+transform:perspective(400px) rotateX(12deg) rotateY(-12deg);
+}
+
+.controller-body:before,
+.controller-body:after{
+content:"";
+position:absolute;
+bottom:-18px;
+width:48px;
+height:45px;
+background:linear-gradient(145deg,#303c5b,#090e1b);
+border:1px solid #465477;
+border-radius:12px 12px 25px 25px;
+z-index:-1;
+}
+
+.controller-body:before{left:12px;transform:rotate(12deg)}
+.controller-body:after{right:12px;transform:rotate(-12deg)}
+
+.controller-dpad{
+position:absolute;
+left:32px;
+top:42px;
+width:35px;
+height:35px;
+}
+
+.controller-dpad:before,
+.controller-dpad:after{
+content:"";
+position:absolute;
+background:linear-gradient(145deg,#e0ebff,#8799bd);
+border-radius:4px;
+box-shadow:0 0 8px #00d9ff88;
+}
+
+.controller-dpad:before{width:12px;height:35px;left:11px}
+.controller-dpad:after{width:35px;height:12px;top:11px}
+
+.controller-stick{
+position:absolute;
+width:19px;
+height:19px;
+border-radius:50%;
+background:radial-gradient(circle at 35% 30%,#aab9d9,#202a42 65%);
+border:2px solid #7184a9;
+box-shadow:0 0 9px #00d9ff66,inset 0 -3px 5px #050914;
+}
+
+.controller-stick.one{left:78px;top:62px}
+.controller-stick.two{right:42px;top:45px}
+
+.controller-buttons{
+position:absolute;
+right:23px;
+top:35px;
+display:grid;
+grid-template-columns:repeat(2,15px);
+gap:7px;
+transform:rotate(-15deg);
+}
+
+.controller-buttons span{
+width:13px;
+height:13px;
+border-radius:50%;
+background:linear-gradient(145deg,#c59aff,#5826bd);
+box-shadow:0 0 10px #9d63ff;
+border:1px solid #d5baff;
+}
+
+.controller-buttons span:nth-child(2),
+.controller-buttons span:nth-child(3){
+background:linear-gradient(145deg,#45eaff,#0879bc);
+box-shadow:0 0 10px #00d9ff;
+border-color:#a5faff;
+}
+
+.controller-light{
+position:absolute;
+width:42px;
+height:4px;
+left:73px;
+top:27px;
+border-radius:10px;
+background:#00eaff;
+box-shadow:0 0 8px #00eaff,0 0 15px #00eaff;
+animation:controllerLight 1.5s infinite alternate;
+}
+
+.controller-center{
+position:absolute;
+width:25px;
+height:9px;
+left:83px;
+top:43px;
+border-radius:10px;
+background:#090e1c;
+border:1px solid #465477;
+}
+
+@keyframes controllerFloat{
+0%,100%{transform:translateY(-50%) rotate(-4deg)}
+50%{transform:translateY(calc(-50% - 16px)) rotate(4deg)}
+}
+
+@keyframes controllerLight{
+from{opacity:.5;box-shadow:0 0 5px #00eaff}
+to{opacity:1;box-shadow:0 0 15px #00eaff,0 0 25px #00eaff}
+}
+
 /* SECTIONS */
 section{padding:68px 7%;scroll-margin-top:80px}
 .section-head{text-align:center;margin-bottom:30px}
@@ -294,10 +409,7 @@ gap:12px;
 
 .logo{font-size:21px}
 
-.menu-toggle{
-display:block;
-margin-left:auto;
-}
+.menu-toggle{display:block;margin-left:auto}
 
 header nav{
 display:none;
@@ -314,10 +426,7 @@ padding:7px;
 box-shadow:0 12px 30px #0008;
 }
 
-header nav.active{
-display:flex;
-animation:menuOpen .22s ease;
-}
+header nav.active{display:flex;animation:menuOpen .22s ease}
 
 @keyframes menuOpen{
 from{opacity:0;transform:translateY(-8px)}
@@ -335,15 +444,20 @@ border-bottom:1px solid #263451;
 header nav a:last-child{border-bottom:none}
 header>.btn{display:none}
 
-.hero{min-height:520px;padding:70px 5%}
+/* MOBILE HOME */
+.hero{
+min-height:650px;
+padding:70px 5% 175px;
+}
+
 .hero p{font-size:19px}
 section{padding:52px 5%}
 .stat{min-width:125px}
 
-/* ROBOT ON THE SIDE FOR MOBILE */
+/* ROBOT - TOP RIGHT */
 .robot{
 position:absolute;
-top:20px;
+top:16px;
 right:5px;
 width:110px;
 height:145px;
@@ -357,6 +471,23 @@ animation:robotMobileFloat 3s ease-in-out infinite;
 50%{transform:scale(.72) translateY(-14px)}
 }
 
+/* CONTROLLER - BOTTOM LEFT */
+.controller-3d{
+top:auto;
+left:5px;
+bottom:8px;
+width:150px;
+height:115px;
+transform:scale(.76);
+transform-origin:bottom left;
+animation:controllerMobileFloat 4s ease-in-out infinite;
+}
+
+@keyframes controllerMobileFloat{
+0%,100%{transform:scale(.76) translateY(0) rotate(-4deg)}
+50%{transform:scale(.76) translateY(-12px) rotate(4deg)}
+}
+
 .hero-inner .eyebrow{
 max-width:80%;
 margin-right:auto;
@@ -368,12 +499,25 @@ margin-right:auto;
 .logo{font-size:18px}
 .menu-toggle{font-size:21px;padding:7px 11px}
 .hero h1{font-size:43px}
+.controller-3d{transform:scale(.65);transform-origin:bottom left}
+@keyframes controllerMobileFloat{
+0%,100%{transform:scale(.65) translateY(0) rotate(-4deg)}
+50%{transform:scale(.65) translateY(-10px) rotate(4deg)}
+}
 }
 
 /* SMALL DESKTOP SCREENS */
 @media(min-width:781px) and (max-width:1050px){
-.robot{right:2%;transform:scale(.8) translateY(-50%);transform-origin:center}
-.hero-inner{max-width:75%}
+.robot{right:2%;transform:scale(.8);transform-origin:center}
+.controller-3d{left:1%;transform:scale(.8);transform-origin:center}
+.hero-inner{max-width:65%}
+}
+
+/* REDUCE MOTION ACCESSIBILITY */
+@media(prefers-reduced-motion:reduce){
+.robot,.controller-3d,.robot-shadow,.robot-antenna:after,.controller-light{
+animation:none!important;
+}
 }
 </style>
 </head>
@@ -405,6 +549,23 @@ margin-right:auto;
 <main>
 
 <section class="hero" id="home">
+
+  <!-- 3D FLOATING GAMING CONTROLLER -->
+  <div class="controller-3d">
+    <div class="controller-body">
+      <div class="controller-light"></div>
+      <div class="controller-center"></div>
+      <div class="controller-dpad"></div>
+      <div class="controller-stick one"></div>
+      <div class="controller-stick two"></div>
+      <div class="controller-buttons">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
 
   <!-- 3D FLOATING ROBOT -->
   <div class="robot">
