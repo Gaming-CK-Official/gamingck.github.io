@@ -62,6 +62,20 @@ section{padding:68px 7%;scroll-margin-top:80px}
 .playlist-card{overflow:hidden;background:linear-gradient(145deg,#121d34,#090f1e);border:1px solid #293d60;border-radius:12px;padding:10px;transition:.25s}
 .playlist-card:hover{transform:translateY(-6px);border-color:var(--purple);box-shadow:0 10px 30px #0007,0 0 18px #9d63ff22}
 .playlist-card h3{font-family:Orbitron,sans-serif;font-size:15px;padding:14px 8px 8px;color:#e5dcff}
+
+/* DOWNLOAD SECTION */
+.downloads{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+.download-card{overflow:hidden;background:linear-gradient(145deg,#121d34,#090f1e);border:1px solid #293d60;border-radius:13px;transition:.25s}
+.download-card:hover{transform:translateY(-6px);border-color:var(--cyan);box-shadow:0 12px 30px #0007,0 0 18px #25e6ff18}
+.download-thumb{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#0b1427}
+.download-info{padding:17px}
+.download-info h3{font-family:Orbitron,sans-serif;font-size:16px;margin-bottom:7px}
+.download-info p{color:var(--muted);font-size:16px;line-height:1.4;min-height:42px}
+.download-meta{display:flex;justify-content:space-between;gap:10px;align-items:center;margin:13px 0;color:#aab5cc;font-size:14px}
+.download-tag{color:var(--cyan);font-weight:800;letter-spacing:1px}
+.download-btn{display:flex;width:100%;margin-top:10px}
+.download-note{max-width:760px;margin:25px auto 0;text-align:center;color:var(--muted);font-size:15px}
+
 .about-box{max-width:850px;margin:auto;text-align:center;padding:35px 28px;background:linear-gradient(145deg,#111b30,#0a1020);border:1px solid #263b5d;border-radius:12px;color:#c7d2e8;line-height:1.8}
 .about-box strong{color:var(--cyan)}
 .social{text-align:center}
@@ -77,7 +91,7 @@ footer b{color:var(--red)}
   <div class="logo">GAMING <b>CK</b> 🎮</div>
   <nav>
     <a href="#home">Home</a><a href="#games">Games</a><a href="#videos">Videos</a>
-    <a href="#playlists">Playlists</a><a href="#live">Live</a><a href="#about">About</a>
+    <a href="#playlists">Playlists</a><a href="#downloads">Downloads</a><a href="#live">Live</a><a href="#about">About</a>
   </nav>
   <a class="btn btn-red" href="https://youtube.com/@gaming-ck-yt?sub_confirmation=1" target="_blank" rel="noopener">▶ SUBSCRIBE</a>
 </header>
@@ -136,6 +150,51 @@ footer b{color:var(--red)}
     <article class="playlist-card"><iframe src="https://www.youtube.com/embed/videoseries?list=PLWPjpkaE-6t3E4cJZ4XW0ZLtPcVmja3cW" title="Gaming CK Playlist 4" loading="lazy" allowfullscreen></iframe><h3>⛏️ PLAYLIST 04</h3></article>
     <article class="playlist-card"><iframe src="https://www.youtube.com/embed/videoseries?list=PLWPjpkaE-6t1vrewr_yCmSeMUtZCH5kdv" title="Gaming CK Playlist 5" loading="lazy" allowfullscreen></iframe><h3>🏆 PLAYLIST 05</h3></article>
   </div>
+</section>
+
+<section id="downloads">
+  <div class="section-head">
+    <div class="kicker">FILES & EXTRAS</div>
+    <h2 class="title">📥 GAMING <span>DOWNLOADS</span></h2>
+    <p class="section-desc">Download bus mods, skins, wallpapers and other files shared by Gaming CK.</p>
+  </div>
+  <div class="downloads">
+
+    <!-- DOWNLOAD CARD 1: Change the image and MediaFire link below -->
+    <article class="download-card">
+      <img class="download-thumb" src="images/bus-mod.jpg" alt="Bus mod thumbnail">
+      <div class="download-info">
+        <h3>🚌 Sri Lanka Bus Mod</h3>
+        <p>Add your bus mod details here. You can edit this description.</p>
+        <div class="download-meta"><span class="download-tag">FREE DOWNLOAD</span><span>File: ZIP</span></div>
+        <a class="btn btn-cyan download-btn" href="YOUR_MEDIAFIRE_LINK_HERE" target="_blank" rel="noopener">⬇ DOWNLOAD NOW</a>
+      </div>
+    </article>
+
+    <!-- DOWNLOAD CARD 2: Change the image and download link below -->
+    <article class="download-card">
+      <img class="download-thumb" src="images/bus-skin.jpg" alt="Bus skin thumbnail">
+      <div class="download-info">
+        <h3>🎨 BUSSID Bus Skin</h3>
+        <p>Add the skin name and a short description here.</p>
+        <div class="download-meta"><span class="download-tag">FREE DOWNLOAD</span><span>File: PNG</span></div>
+        <a class="btn btn-cyan download-btn" href="YOUR_MEDIAFIRE_LINK_HERE" target="_blank" rel="noopener">⬇ DOWNLOAD NOW</a>
+      </div>
+    </article>
+
+    <!-- DOWNLOAD CARD 3: Change the image and download link below -->
+    <article class="download-card">
+      <img class="download-thumb" src="images/wallpaper.jpg" alt="Gaming wallpaper thumbnail">
+      <div class="download-info">
+        <h3>⚡ Gaming Wallpaper</h3>
+        <p>Add details about the wallpaper or any other file here.</p>
+        <div class="download-meta"><span class="download-tag">FREE DOWNLOAD</span><span>File: JPG</span></div>
+        <a class="btn btn-cyan download-btn" href="YOUR_MEDIAFIRE_LINK_HERE" target="_blank" rel="noopener">⬇ DOWNLOAD NOW</a>
+      </div>
+    </article>
+
+  </div>
+  <p class="download-note">More files coming soon! ❤️ If a download link does not work, please check the link you added.</p>
 </section>
 
 <section id="about">
