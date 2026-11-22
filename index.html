@@ -3,954 +3,203 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#080817">
-<title>Gaming CK | Ultimate Gaming Portal</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080914">
+<title>Gaming CK | Gaming Universe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
-:root {
-  --bg:#080817;
-  --panel:#111128;
-  --cyan:#20e8ff;
-  --purple:#975cff;
-  --red:#ff365d;
-  --white:#f8f8ff;
-  --muted:#a7a7c1;
-}
-
-* {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html {
-  scroll-behavior:smooth;
-  scroll-padding-top:90px;
-}
-
-body {
-  background:var(--bg);
-  color:var(--white);
-  font-family:'Rajdhani',sans-serif;
-  overflow-x:hidden;
-}
-
-a {color:inherit;text-decoration:none}
-
-body:before {
-  content:"";
-  position:fixed;
-  inset:0;
-  z-index:-1;
-  pointer-events:none;
-  background:
-    radial-gradient(ellipse at 10% 10%,#5928ff20,transparent 35%),
-    radial-gradient(ellipse at 90% 40%,#00d9ff12,transparent 35%);
-}
-
-/* NAVIGATION */
-
-header {
-  position:sticky;
-  top:0;
-  z-index:100;
-  padding:15px 6%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-  background:#080817eF;
-  backdrop-filter:blur(20px);
-  border-bottom:1px solid #ffffff15;
-}
-
-.logo {
-  font-family:Orbitron,sans-serif;
-  font-weight:900;
-  font-size:23px;
-  letter-spacing:1px;
-}
-
-.logo span {color:var(--cyan)}
-
-nav {
-  display:flex;
-  gap:23px;
-  align-items:center;
-}
-
-nav a {
-  color:#c4c4db;
-  font-weight:700;
-  font-size:17px;
-  transition:.3s;
-}
-
-nav a:hover {color:var(--cyan)}
-
-.btn {
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  padding:12px 22px;
-  border-radius:8px;
-  font-weight:800;
-  font-size:17px;
-  transition:.3s;
-  border:1px solid transparent;
-  cursor:pointer;
-}
-
-.btn:hover {
-  transform:translateY(-4px);
-  filter:brightness(1.2);
-}
-
-.red {
-  background:linear-gradient(110deg,#ff315c,#bd1745);
-  box-shadow:0 5px 25px #ff315c45;
-  color:white;
-}
-
-.blue {
-  background:linear-gradient(110deg,#16c8f5,#655cff);
-  color:white;
-  box-shadow:0 5px 25px #16c8f540;
-}
-
-.outline {
-  border:1px solid var(--cyan);
-  color:var(--cyan);
-  background:#20e8ff0b;
-}
-
-/* HERO */
-
-.hero {
-  min-height:650px;
-  padding:80px 7%;
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  align-items:center;
-  gap:30px;
-  overflow:hidden;
-  position:relative;
-  background:
-    linear-gradient(90deg,#080817 5%,#080817dd 48%,#08081755),
-    url('images/background.jpg') center/cover no-repeat;
-}
-
-.hero-content {
-  max-width:650px;
-  position:relative;
-  z-index:2;
-}
-
-.tag {
-  display:inline-block;
-  color:var(--cyan);
-  background:#20e8ff12;
-  border:1px solid #20e8ff55;
-  padding:9px 17px;
-  border-radius:5px;
-  font-weight:800;
-  letter-spacing:3px;
-  font-size:14px;
-}
-
-.hero h1 {
-  font-family:Orbitron,sans-serif;
-  font-size:clamp(45px,7vw,85px);
-  line-height:1.13;
-  margin:25px 0;
-  text-shadow:0 0 35px #20e8ff25;
-}
-
-.hero h1 span {
-  display:block;
-  color:var(--cyan);
-}
-
-.hero p {
-  color:#c2c2d9;
-  font-size:22px;
-  line-height:1.5;
-  margin-bottom:30px;
-}
-
-.hero-buttons {
-  display:flex;
-  gap:15px;
-  flex-wrap:wrap;
-}
-
-.hero-art {
-  min-height:420px;
-  display:grid;
-  place-items:center;
-  position:relative;
-}
-
-.hero-circle {
-  width:min(390px,85vw);
-  aspect-ratio:1;
-  border-radius:50%;
-  border:1px solid #20e8ff55;
-  background:
-    radial-gradient(circle,#5c2aff25,transparent 65%),
-    linear-gradient(135deg,#20e8ff12,#9d63ff15);
-  box-shadow:
-    0 0 50px #20e8ff15,
-    inset 0 0 60px #9d63ff20;
-  display:grid;
-  place-items:center;
-  animation:float 5s ease-in-out infinite;
-}
-
-.hero-circle img {
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  filter:drop-shadow(0 0 30px #20e8ff55);
-}
-
-.hero-game {
-  position:absolute;
-  bottom:15px;
-  left:0;
-  background:#111128dd;
-  border:1px solid #20e8ff55;
-  border-radius:10px;
-  padding:15px 23px;
-  backdrop-filter:blur(12px);
-}
-
-.hero-game strong {
-  display:block;
-  color:var(--cyan);
-  font-family:Orbitron;
-}
-
-.hero-game small {color:var(--muted)}
-
-@keyframes float {
-  0%,100% {transform:translateY(0)}
-  50% {transform:translateY(-18px)}
-}
-
-/* INFO STRIP */
-
-.info-strip {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:1px;
-  background:#ffffff15;
-  border-top:1px solid #ffffff12;
-  border-bottom:1px solid #ffffff12;
-}
-
-.info-item {
-  padding:25px 10px;
-  text-align:center;
-  background:#101024;
-}
-
-.info-item strong {
-  font-family:Orbitron;
-  color:var(--cyan);
-  display:block;
-  font-size:19px;
-}
-
-.info-item span {
-  color:var(--muted);
-  font-size:15px;
-}
-
-/* SECTION */
-
-section {
-  padding:80px 7%;
-  scroll-margin-top:80px;
-}
-
-.section-heading {
-  margin-bottom:35px;
-}
-
-.section-heading.center {
-  text-align:center;
-}
-
-.section-heading small {
-  color:var(--red);
-  letter-spacing:4px;
-  font-weight:800;
-}
-
-.section-heading h2 {
-  font-family:Orbitron;
-  font-size:clamp(25px,4vw,38px);
-  margin:12px 0;
-}
-
-.section-heading h2 span {color:var(--cyan)}
-
-.section-heading p {
-  color:var(--muted);
-  font-size:18px;
-}
-
-/* GAME CATEGORIES */
-
-.games {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
-}
-
-.game-card {
-  min-height:230px;
-  position:relative;
-  overflow:hidden;
-  border-radius:15px;
-  border:1px solid #ffffff20;
-  background:#15152b;
-  transition:.35s;
-}
-
-.game-card:hover {
-  transform:translateY(-9px);
-  border-color:var(--cyan);
-  box-shadow:0 15px 35px #20e8ff20;
-}
-
-.game-card img {
-  width:100%;
-  height:230px;
-  object-fit:cover;
-  display:block;
-  transition:.5s;
-}
-
-.game-card:hover img {transform:scale(1.1)}
-
-.game-overlay {
-  position:absolute;
-  inset:0;
-  display:flex;
-  justify-content:flex-end;
-  flex-direction:column;
-  padding:22px;
-  background:linear-gradient(transparent,#050510 95%);
-}
-
-.game-overlay h3 {
-  font-family:Orbitron;
-  font-size:19px;
-}
-
-.game-overlay p {color:#c1c1d5}
-
-/* FEATURED DOWNLOADS */
-
-.download-grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:23px;
-}
-
-.download-card {
-  overflow:hidden;
-  background:#111128;
-  border:1px solid #ffffff17;
-  border-radius:14px;
-  transition:.3s;
-}
-
-.download-card:hover {
-  transform:translateY(-7px);
-  border-color:var(--purple);
-  box-shadow:0 10px 35px #975cff22;
-}
-
-.download-card img {
-  width:100%;
-  height:190px;
-  object-fit:cover;
-  background:#17172e;
-  display:block;
-}
-
-.download-info {padding:20px}
-
-.download-info h3 {
-  font-family:Orbitron;
-  font-size:16px;
-  margin-bottom:10px;
-}
-
-.download-info p {
-  color:var(--muted);
-  min-height:43px;
-}
-
-.download-meta {
-  display:flex;
-  justify-content:space-between;
-  margin:15px 0;
-  font-size:14px;
-  color:var(--cyan);
-  font-weight:700;
-}
-
-.download-info .btn {
-  width:100%;
-  margin-top:8px;
-}
-
-/* VIDEO */
-
-.video-section {
-  background:linear-gradient(120deg,#10102b,#0b0b1d);
-  border-top:1px solid #ffffff12;
-  border-bottom:1px solid #ffffff12;
-}
-
-.video-frame {
-  max-width:900px;
-  margin:auto;
-  padding:10px;
-  border-radius:15px;
-  background:linear-gradient(120deg,var(--cyan),var(--purple),var(--red));
-}
-
-.video-frame iframe {
-  display:block;
-  width:100%;
-  aspect-ratio:16/9;
-  border:0;
-  border-radius:9px;
-}
-
-.center-button {
-  text-align:center;
-  margin-top:25px;
-}
-
-/* PLAYLISTS */
-
-.playlists {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-}
-
-.playlist-card {
-  background:#111128;
-  padding:10px;
-  border:1px solid #ffffff19;
-  border-radius:12px;
-  transition:.3s;
-}
-
-.playlist-card:hover {
-  border-color:var(--cyan);
-  transform:translateY(-6px);
-}
-
-.playlist-card iframe {
-  width:100%;
-  aspect-ratio:16/9;
-  border:0;
-  border-radius:7px;
-}
-
-.playlist-card h3 {
-  font-family:Orbitron;
-  font-size:14px;
-  padding:15px 8px;
-}
-
-/* LIVE */
-
-.live-box {
-  padding:55px 20px;
-  text-align:center;
-  border:1px solid #ff365d70;
-  border-radius:17px;
-  background:
-    radial-gradient(ellipse at top,#ff365d25,transparent 65%),
-    #111128;
-}
-
-.live-box h2 {
-  font-family:Orbitron;
-  font-size:clamp(24px,4vw,36px);
-  margin:18px 0;
-}
-
-.live-box p {
-  color:var(--muted);
-  margin-bottom:24px;
-}
-
-.live-label {
-  color:var(--red);
-  letter-spacing:4px;
-  font-weight:900;
-}
-
-.dot {
-  display:inline-block;
-  width:10px;
-  height:10px;
-  border-radius:50%;
-  background:var(--red);
-  margin-right:8px;
-  animation:blink 1s infinite;
-}
-
-@keyframes blink {
-  50% {opacity:.3}
-}
-
-/* ABOUT */
-
-.about-box {
-  max-width:850px;
-  margin:auto;
-  padding:40px;
-  background:#111128;
-  border:1px solid #ffffff19;
-  border-radius:15px;
-  text-align:center;
-  line-height:2;
-  color:#c3c3d7;
-}
-
-.about-box strong {color:var(--cyan)}
-
-/* SOCIAL */
-
-.social-buttons {
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:13px;
-}
-
-/* FOOTER */
-
-footer {
-  padding:35px 15px;
-  text-align:center;
-  color:var(--muted);
-  border-top:1px solid #ffffff17;
-  background:#060610;
-}
-
-footer b {color:var(--red)}
-
-/* MOBILE */
-
-@media(max-width:850px) {
-  header {
-    flex-wrap:wrap;
-    justify-content:center;
-  }
-
-  nav {
-    order:3;
-    width:100%;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:15px;
-  }
-
-  header>.btn {display:none}
-
-  .hero {
-    grid-template-columns:1fr;
-    text-align:center;
-  }
-
-  .hero-content {margin:auto}
-
-  .hero-buttons {justify-content:center}
-
-  .hero-art {min-height:320px}
-
-  .games,.download-grid {
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-@media(max-width:560px) {
-  header {padding:13px 3%}
-
-  nav {gap:12px}
-
-  nav a {font-size:15px}
-
-  .hero {
-    padding:65px 5%;
-    min-height:auto;
-  }
-
-  .hero h1 {font-size:48px}
-
-  .hero p {font-size:19px}
-
-  .hero-art {min-height:280px}
-
-  section {padding:55px 5%}
-
-  .games,.download-grid {
-    grid-template-columns:1fr;
-  }
-
-  .info-item strong {font-size:14px}
-
-  .info-item span {font-size:12px}
-
-  .about-box {padding:25px 15px}
-
-  .social-buttons .btn {width:100%}
+:root{--bg:#080914;--panel:#111426;--panel2:#171b32;--cyan:#48eaff;--pink:#ff3f83;--violet:#9a72ff;--text:#f7f7ff;--muted:#a9aec5;--line:#ffffff16}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:Rajdhani,Arial,sans-serif;background:var(--bg);color:var(--text);font-size:18px;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse at 10% 10%,#284bff22,transparent 32%),radial-gradient(ellipse at 90% 35%,#a52cff1c,transparent 30%),linear-gradient(135deg,#080914,#0c1020 55%,#090a16)}
+body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.18;background-image:linear-gradient(#ffffff0a 1px,transparent 1px),linear-gradient(90deg,#ffffff0a 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
+header{height:auto;min-height:78px;padding:14px 6%;display:flex;align-items:center;justify-content:space-between;gap:20px;position:sticky;top:0;z-index:50;background:#090b18ef;backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.brand{font:900 22px Orbitron,sans-serif;letter-spacing:1px;white-space:nowrap}
+.brand span{color:var(--pink);text-shadow:0 0 18px #ff3f8366}
+.brand small{display:block;font:700 9px Rajdhani,sans-serif;letter-spacing:4px;color:var(--muted);margin-top:4px}
+nav{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+nav a{font-weight:700;color:#c9cce0;font-size:17px;transition:.2s}
+nav a:hover{color:var(--cyan)}
+.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 19px;border-radius:8px;font-weight:800;letter-spacing:.5px;transition:.25s}
+.nav-cta,.btn-primary{background:linear-gradient(110deg,var(--pink),#ff694e);color:white;box-shadow:0 8px 25px #ff3f8330}
+.btn-outline{border:1px solid var(--cyan);color:var(--cyan);background:#48eaff0b}
+.btn:hover,.nav-cta:hover{transform:translateY(-3px);filter:brightness(1.12)}
+.hero{min-height:590px;padding:78px 7% 65px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:35px;position:relative;overflow:hidden}
+.hero-copy{max-width:680px;position:relative;z-index:2}
+.overline{display:inline-flex;align-items:center;gap:9px;color:var(--cyan);font:700 12px Orbitron,sans-serif;letter-spacing:3px;border:1px solid #48eaff55;background:#48eaff0c;padding:10px 14px;border-radius:4px}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--pink);box-shadow:0 0 14px var(--pink)}
+.hero h1{font:900 clamp(48px,7.5vw,92px)/1.06 Orbitron,sans-serif;letter-spacing:-3px;margin:25px 0 18px}
+.hero h1 span{color:var(--pink);text-shadow:0 0 35px #ff3f8355}
+.hero-copy>p{font-size:22px;line-height:1.4;color:#c6c9dc;max-width:570px;margin-bottom:27px}
+.hero-buttons{display:flex;gap:13px;flex-wrap:wrap}
+.hero-tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:38px}
+.hero-tags span{font-size:14px;font-weight:700;color:#c3c8df;padding:7px 12px;border:1px solid var(--line);border-radius:5px;background:#ffffff08}
+.hero-art{min-height:390px;position:relative;display:grid;place-items:center}
+.orb{width:min(390px,80vw);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#3b68ff55,#8e38ff22 48%,transparent 70%);border:1px solid #7b70ff55;box-shadow:0 0 80px #684bff22,inset 0 0 55px #48eaff16;display:grid;place-items:center;position:relative}
+.orb:before,.orb:after{content:"";position:absolute;inset:22px;border:1px solid #48eaff55;border-radius:50%;transform:rotateX(65deg) rotate(-25deg)}
+.orb:after{inset:48px;border-color:#ff3f8366;transform:rotateX(65deg) rotate(35deg)}
+.hero-logo{font:900 clamp(36px,5vw,65px)/1 Orbitron,sans-serif;text-align:center;text-shadow:0 0 24px #48eaff55;z-index:1}
+.hero-logo span{color:var(--pink)}
+.hero-logo small{display:block;font:700 13px Rajdhani,sans-serif;letter-spacing:5px;color:#c5c9e1;margin-top:15px}
+.float-chip{position:absolute;padding:11px 16px;background:#14182cdd;border:1px solid #ffffff22;border-radius:8px;font:700 13px Orbitron,sans-serif;box-shadow:0 12px 35px #0006}
+.chip-one{top:13%;left:0;color:var(--cyan)}
+.chip-two{right:-2%;top:25%;color:#ff8bb5}
+.chip-three{bottom:12%;left:5%;color:#c2a8ff}
+section{padding:72px 7%;scroll-margin-top:82px}
+.section-top{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:28px}
+.eyebrow{font:700 11px Orbitron,sans-serif;letter-spacing:3px;color:var(--pink)}
+.section-title{font:800 clamp(25px,4vw,37px) Orbitron,sans-serif;margin-top:8px}
+.section-title span{color:var(--cyan)}
+.section-desc{color:var(--muted);margin-top:8px}
+.text-link{color:var(--cyan);font-weight:800}
+.game-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+.game-card{min-height:235px;position:relative;overflow:hidden;border:1px solid var(--line);border-radius:13px;background:linear-gradient(145deg,#1a2039,#0d1020);padding:22px;display:flex;flex-direction:column;justify-content:end;transition:.25s}
+.game-card:hover{transform:translateY(-7px);border-color:var(--cyan);box-shadow:0 18px 38px #0007}
+.game-card:before{content:"";position:absolute;inset:0;background:var(--art) center/cover no-repeat;opacity:.33;transition:.3s}
+.game-card:hover:before{opacity:.52;transform:scale(1.06)}
+.game-card:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#080914 5%,#08091455 75%,transparent)}
+.game-card>*{position:relative;z-index:1}
+.game-symbol{font-size:34px;margin-bottom:auto;filter:drop-shadow(0 0 12px #48eaff55)}
+.game-card h3{font:800 18px Orbitron,sans-serif}
+.game-card p{color:#c2c7da;margin-top:7px;font-size:16px}
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.feature-box{padding:30px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(135deg,#171b32,#0d1020);position:relative;overflow:hidden}
+.feature-box.live{background:radial-gradient(circle at 90% 10%,#ff3f8324,transparent 45%),linear-gradient(135deg,#1b1429,#101326)}
+.feature-box h3{font:800 22px Orbitron,sans-serif;margin:12px 0}
+.feature-box p{color:var(--muted);margin-bottom:18px}
+.feature-icon{font-size:30px}
+.live-label{font:800 11px Orbitron,sans-serif;letter-spacing:2px;color:var(--pink)}
+.video-frame{max-width:950px;margin:auto;padding:10px;border-radius:15px;background:linear-gradient(120deg,#48eaff77,#9a72ff77,#ff3f8377);box-shadow:0 20px 55px #0006}
+.video-frame iframe,.playlist iframe{width:100%;display:block;aspect-ratio:16/9;border:0;border-radius:9px;background:#050711}
+.center{text-align:center;margin-top:20px}
+.playlist-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.playlist{padding:10px;background:linear-gradient(145deg,#171c34,#0d1020);border:1px solid var(--line);border-radius:12px;transition:.2s}
+.playlist:hover{border-color:var(--violet);transform:translateY(-5px)}
+.playlist h3{padding:13px 7px 5px;font:700 14px Orbitron,sans-serif;color:#ded8ff}
+.download-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.download-card{overflow:hidden;border:1px solid var(--line);border-radius:13px;background:linear-gradient(145deg,#171c34,#0d1020)}
+.download-card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:linear-gradient(135deg,#182b52,#28163d)}
+.download-content{padding:18px}
+.download-content h3{font:700 16px Orbitron,sans-serif}
+.download-content p{color:var(--muted);margin:9px 0 14px}
+.download-content .btn{width:100%}
+.about-panel{max-width:900px;margin:auto;text-align:center;padding:35px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(135deg,#171c34,#0d1020);color:#c9cce0;line-height:1.8}
+.about-panel strong{color:var(--cyan)}
+.socials{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+footer{text-align:center;padding:28px 15px;color:#9299b5;border-top:1px solid var(--line);background:#070812}
+footer b{color:var(--pink)}
+@media(max-width:900px){
+header{flex-wrap:wrap;justify-content:center}
+nav{order:3;width:100%;justify-content:center;gap:15px}
+.hero{grid-template-columns:1fr;text-align:center}
+.hero-copy{margin:auto}
+.hero-copy>p{margin-left:auto;margin-right:auto}
+.hero-buttons,.hero-tags{justify-content:center}
+.hero-art{min-height:330px}
+.game-grid{grid-template-columns:repeat(2,1fr)}
+.playlist-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+header{padding:12px 4%}
+.nav-cta{display:none}
+nav{gap:10px}
+nav a{font-size:15px}
+.hero{padding:60px 5% 35px;min-height:unset}
+.hero h1{letter-spacing:-2px}
+.hero-copy>p{font-size:19px}
+.hero-art{min-height:280px}
+.orb{width:260px}
+.float-chip{font-size:10px;padding:8px}
+.chip-two{right:-1%}
+section{padding:55px 5%}
+.section-top{display:block}
+.game-grid,.feature,.playlist-grid,.download-grid{grid-template-columns:1fr}
+.game-card{min-height:205px}
+.feature-box{padding:23px}
+.about-panel{padding:25px 18px}
 }
 </style>
 </head>
-
 <body>
-
 <header>
-  <a class="logo" href="#home">GAMING <span>CK</span> 🎮</a>
-
+  <a class="brand" href="#home">GAMING <span>CK</span><small>PLAY • ENJOY • SUBSCRIBE</small></a>
   <nav>
-    <a href="#home">HOME</a>
-    <a href="#games">GAMES</a>
-    <a href="#videos">VIDEOS</a>
-    <a href="#playlists">PLAYLISTS</a>
-    <a href="#downloads">DOWNLOADS</a>
-    <a href="#live">LIVE</a>
+    <a href="#home">Home</a><a href="#games">Games</a><a href="#videos">Videos</a><a href="#playlists">Playlists</a><a href="#downloads">Downloads</a><a href="#live">Live</a>
   </nav>
-
-  <a class="btn red" href="https://youtube.com/@gaming-ck-yt?sub_confirmation=1" target="_blank" rel="noopener">SUBSCRIBE</a>
+  <a class="nav-cta" href="https://youtube.com/@gaming-ck-yt?sub_confirmation=1" target="_blank" rel="noopener">▶ SUBSCRIBE</a>
 </header>
-
 <main>
-
-<!-- HERO -->
-
 <section class="hero" id="home">
-
-  <div class="hero-content">
-
-    <div class="tag">WELCOME TO GAMING CK</div>
-
-    <h1>
-      ENTER THE
-      <span>GAMING WORLD</span>
-    </h1>
-
-    <p>
-      Discover amazing gameplay, exciting adventures,
-      gaming videos, bus mods and much more.
-      Join the Gaming CK community!
-    </p>
-
-    <div class="hero-buttons">
-      <a class="btn blue" href="https://youtube.com/@gaming-ck-yt/videos" target="_blank" rel="noopener">▶ EXPLORE VIDEOS</a>
-
-      <a class="btn outline" href="#downloads">⬇ DOWNLOADS</a>
-    </div>
-
+  <div class="hero-copy">
+    <div class="overline"><i class="pulse"></i> WELCOME TO THE GAMING UNIVERSE</div>
+    <h1>LEVEL UP<br>WITH <span>GAMING CK</span></h1>
+    <p>Gameplay, live streams, bus mods and epic adventures. Your next gaming destination starts here.</p>
+    <div class="hero-buttons"><a class="btn btn-primary" href="https://youtube.com/@gaming-ck-yt/videos" target="_blank" rel="noopener">▶ EXPLORE VIDEOS</a><a class="btn btn-outline" href="https://youtube.com/@gaming-ck-yt/live" target="_blank" rel="noopener">🔴 WATCH LIVE</a></div>
+    <div class="hero-tags"><span>⛏️ MINECRAFT</span><span>🔥 FREE FIRE</span><span>🚌 BUSSID</span><span>🎮 MORE GAMES</span></div>
   </div>
-
   <div class="hero-art">
-    <div class="hero-circle">
-      <img src="images/gaming-character.png" alt="Gaming CK Character"
-      onerror="this.style.display='none';this.parentElement.innerHTML='<div style=&quot;text-align:center;font-family:Orbitron;color:#20e8ff;font-size:36px&quot;>GAMING<br>CK 🎮</div>'">
-    </div>
-
-    <div class="hero-game">
-      <strong>GAMING CK</strong>
-      <small>YOUR GAMING DESTINATION</small>
-    </div>
+    <div class="orb"><div class="hero-logo">GAMING<br><span>CK</span><small>YOUR GAMING HUB</small></div></div>
+    <div class="float-chip chip-one">⚡ GAME ON</div>
+    <div class="float-chip chip-two">🔴 LIVE NOW</div>
+    <div class="float-chip chip-three">🏆 LET'S PLAY</div>
   </div>
-
 </section>
-
-<!-- INFO -->
-
-<div class="info-strip">
-  <div class="info-item">
-    <strong>ALL GAMES</strong>
-    <span>Multiple Gaming Adventures</span>
-  </div>
-
-  <div class="info-item">
-    <strong>LIVE STREAMS</strong>
-    <span>Join The Community</span>
-  </div>
-
-  <div class="info-item">
-    <strong>FREE FILES</strong>
-    <span>Mods, Skins & More</span>
-  </div>
-</div>
-
-<!-- GAMES -->
-
 <section id="games">
-
-  <div class="section-heading">
-    <small>EXPLORE GAMES</small>
-    <h2>OUR <span>GAMING ZONE</span></h2>
-    <p>Choose your favourite game and enjoy the adventure.</p>
+  <div class="section-top"><div><div class="eyebrow">CHOOSE YOUR ADVENTURE</div><h2 class="section-title">EXPLORE <span>GAMES</span></h2><p class="section-desc">Different worlds. Different challenges. One gaming family.</p></div><a class="text-link" href="https://youtube.com/@gaming-ck-yt/videos" target="_blank" rel="noopener">ALL GAMEPLAY ↗</a></div>
+  <div class="game-grid">
+    <article class="game-card" style="--art:url('images/minecraft.jpg')"><div class="game-symbol">⛏️</div><h3>MINECRAFT</h3><p>Survival • Builds • Multiplayer</p></article>
+    <article class="game-card" style="--art:url('images/freefire.jpg')"><div class="game-symbol">🔥</div><h3>FREE FIRE</h3><p>Battle • Rank • Squad Fun</p></article>
+    <article class="game-card" style="--art:url('images/bussid.jpg')"><div class="game-symbol">🚌</div><h3>BUS SIMULATOR</h3><p>BUSSID • Mods • Sri Lankan Buses</p></article>
+    <article class="game-card" style="--art:url('images/wallpaper.jpg')"><div class="game-symbol">🎮</div><h3>MORE GAMES</h3><p>New games and new adventures</p></article>
   </div>
-
-  <div class="games">
-
-    <a class="game-card" href="#playlists">
-      <img src="images/bussid.jpg" alt="Bus Simulator Indonesia">
-      <div class="game-overlay">
-        <h3>🚌 BUS SIMULATOR</h3>
-        <p>Bus Mods & Adventures</p>
-      </div>
-    </a>
-
-    <a class="game-card" href="#playlists">
-      <img src="images/minecraft.jpg" alt="Minecraft">
-      <div class="game-overlay">
-        <h3>⛏️ MINECRAFT</h3>
-        <p>Explore & Build</p>
-      </div>
-    </a>
-
-    <a class="game-card" href="#playlists">
-      <img src="images/freefire.jpg" alt="Free Fire">
-      <div class="game-overlay">
-        <h3>🔥 FREE FIRE</h3>
-        <p>Battle & Gameplay</p>
-      </div>
-    </a>
-
-  </div>
-
 </section>
-
-<!-- DOWNLOADS -->
-
-<section id="downloads">
-
-  <div class="section-heading">
-    <small>GAMING FILES</small>
-    <h2>DOWNLOAD <span>CENTER</span></h2>
-    <p>Get free mods, skins, wallpapers and other Gaming CK files.</p>
-  </div>
-
-  <div class="download-grid">
-
-    <article class="download-card">
-      <img src="images/bus.jpg" alt="Bus Mod">
-
-      <div class="download-info">
-        <h3>🚌 SRI LANKA BUS MOD</h3>
-        <p>Add your bus mod details here.</p>
-
-        <div class="download-meta">
-          <span>FREE DOWNLOAD</span>
-          <span>ZIP</span>
-        </div>
-
-        <a class="btn blue" href="YOUR_MEDIAFIRE_LINK_HERE" target="_blank" rel="noopener">⬇ DOWNLOAD NOW</a>
-      </div>
-    </article>
-
-    <article class="download-card">
-      <img src="images/bus-mod.jpg" alt="BUSSID Skin">
-
-      <div class="download-info">
-        <h3>🎨 BUSSID BUS SKIN</h3>
-        <p>Add the skin name and details here.</p>
-
-        <div class="download-meta">
-          <span>FREE DOWNLOAD</span>
-          <span>ZIP</span>
-        </div>
-
-        <a class="btn blue" href="https://www.mediafire.com/file/4p0od7nhcjd3frm/Gaming_CK_1K_gift__%25F0%259F%2598%2587%25E2%259D%25A4%25EF%25B8%258F.zip/file" target="_blank" rel="noopener">⬇ DOWNLOAD NOW</a>
-
-        <a class="btn red" href="https://youtu.be/gDN6StBCm8I" target="_blank" rel="noopener">▶ PW VIDEO</a>
-      </div>
-    </article>
-
-    <article class="download-card">
-      <img src="images/wallpaper.jpg" alt="Gaming Wallpaper">
-
-      <div class="download-info">
-        <h3>⚡ GAMING WALLPAPER</h3>
-        <p>Add your wallpaper details here.</p>
-
-        <div class="download-meta">
-          <span>FREE DOWNLOAD</span>
-          <span>JPG</span>
-        </div>
-
-        <a class="btn blue" href="YOUR_MEDIAFIRE_LINK_HERE" target="_blank" rel="noopener">⬇ DOWNLOAD NOW</a>
-      </div>
-    </article>
-
-  </div>
-
-</section>
-
-<!-- VIDEOS -->
-
-<section class="video-section" id="videos">
-
-  <div class="section-heading center">
-    <small>WATCH GAMING CK</small>
-    <h2>LATEST <span>VIDEOS</span></h2>
-    <p>Watch the latest videos directly from our YouTube channel.</p>
-  </div>
-
-  <div class="video-frame">
-    <iframe
-      src="https://www.youtube.com/embed/videoseries?list=UUnO4ViTgT7TUVlpJXjU1piA"
-      title="Gaming CK Latest Videos"
-      loading="lazy"
-      allowfullscreen>
-    </iframe>
-  </div>
-
-  <div class="center-button">
-    <a class="btn blue" href="https://youtube.com/@gaming-ck-yt/videos" target="_blank" rel="noopener">VIEW ALL VIDEOS ↗</a>
-  </div>
-
-</section>
-
-<!-- PLAYLISTS -->
-
-<section id="playlists">
-
-  <div class="section-heading">
-    <small>WATCH MORE</small>
-    <h2>GAMING <span>PLAYLISTS</span></h2>
-    <p>Choose your favourite playlist.</p>
-  </div>
-
-  <div class="playlists">
-
-    <article class="playlist-card">
-      <iframe src="https://www.youtube.com/embed/videoseries?list=PLP9Iw43r7jFU" loading="lazy" title="Playlist 1" allowfullscreen></iframe>
-      <h3>🎮 PLAYLIST 01</h3>
-    </article>
-
-    <article class="playlist-card">
-      <iframe src="https://www.youtube.com/embed/videoseries?list=PLWPjpkaE-6t0Ec4PRIaAM6-UZBsSpO7_0" loading="lazy" title="Playlist 2" allowfullscreen></iframe>
-      <h3>🔥 PLAYLIST 02</h3>
-    </article>
-
-    <article class="playlist-card">
-      <iframe src="https://www.youtube.com/embed/videoseries?list=PLWPjpkaE-6t2MRKnQeFvd_pZK_RcwuwbM" loading="lazy" title="Playlist 3" allowfullscreen></iframe>
-      <h3>🚌 PLAYLIST 03</h3>
-    </article>
-
-    <article class="playlist-card">
-      <iframe src="https://www.youtube.com/embed/videoseries?list=PLWPjpkaE-6t3E4cJZ4XW0ZLtPcVmja3cW" loading="lazy" title="Playlist 4" allowfullscreen></iframe>
-      <h3>⛏️ PLAYLIST 04</h3>
-    </article>
-
-    <article class="playlist-card">
-      <iframe src="https://www.youtube.com/embed/videoseries?list=PLWPjpkaE-6t1vrewr_yCmSeMUtZCH5kdv" loading="lazy" title="Playlist 5" allowfullscreen></iframe>
-      <h3>🏆 PLAYLIST 05</h3>
-    </article>
-
-  </div>
-
-</section>
-
-<!-- LIVE -->
-
 <section id="live">
-
-  <div class="live-box">
-
-    <div class="live-label">
-      <span class="dot"></span> LIVE STREAM
-    </div>
-
-    <h2>READY TO <span style="color:#ff365d">PLAY?</span></h2>
-
-    <p>Join Gaming CK live streams and enjoy the gaming fun with us!</p>
-
-    <a class="btn red" href="https://youtube.com/@gaming-ck-yt/live" target="_blank" rel="noopener">▶ WATCH LIVE NOW</a>
-
+  <div class="feature">
+    <article class="feature-box live"><div class="live-label">🔴 GAMING CK LIVE</div><h3>JOIN THE LIVE ACTION</h3><p>Watch live gameplay, join the fun and be part of the Gaming CK community.</p><a class="btn btn-primary" href="https://youtube.com/@gaming-ck-yt/live" target="_blank" rel="noopener">WATCH LIVE NOW ↗</a></article>
+    <article class="feature-box"><div class="feature-icon">🚌</div><h3>BUS MODS & DOWNLOADS</h3><p>Find BUSSID mods, skins, wallpapers and files shared on the Gaming CK website.</p><a class="btn btn-outline" href="#downloads">EXPLORE DOWNLOADS ↓</a></article>
   </div>
-
 </section>
-
-<!-- ABOUT -->
-
+<section id="videos">
+  <div class="section-top"><div><div class="eyebrow">LATEST FROM YOUTUBE</div><h2 class="section-title">NEW <span>VIDEOS</span></h2><p class="section-desc">Catch up with the latest Gaming CK uploads.</p></div><a class="text-link" href="https://youtube.com/@gaming-ck-yt/videos" target="_blank" rel="noopener">YOUTUBE CHANNEL ↗</a></div>
+  <div class="video-frame"><iframe src="https://www.youtube.com/embed/videoseries?list=UUnO4ViTgT7TUVlpJXjU1piA" title="Gaming CK Latest Videos" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+</section>
+<section id="playlists">
+  <div class="section-top"><div><div class="eyebrow">WATCH YOUR FAVOURITES</div><h2 class="section-title">GAMING <span>PLAYLISTS</span></h2><p class="section-desc">Choose a playlist and enjoy the videos.</p></div></div>
+  <div class="playlist-grid">
+    <article class="playlist"><iframe src="https://www.youtube.com/embed/videoseries?list=PLP9Iw43r7jFU" title="Gaming CK Playlist 1" loading="lazy" allowfullscreen></iframe><h3>🎮 PLAYLIST 01</h3></article>
+    <article class="playlist"><iframe src="https://www.youtube.com/embed/videoseries?list=PLWPjpkaE-6t0Ec4PRIaAM6-UZBsSpO7_0" title="Gaming CK Playlist 2" loading="lazy" allowfullscreen></iframe><h3>🔥 PLAYLIST 02</h3></article>
+    <article class="playlist"><iframe src="https://www.youtube.com/embed/videoseries?list=PLWPjpkaE-6t2MRKnQeFvd_pZK_RcwuwbM" title="Gaming CK Playlist 3" loading="lazy" allowfullscreen></iframe><h3>🚌 PLAYLIST 03</h3></article>
+    <article class="playlist"><iframe src="https://www.youtube.com/embed/videoseries?list=PLWPjpkaE-6t3E4cJZ4XW0ZLtPcVmja3cW" title="Gaming CK Playlist 4" loading="lazy" allowfullscreen></iframe><h3>⛏️ PLAYLIST 04</h3></article>
+    <article class="playlist"><iframe src="https://www.youtube.com/embed/videoseries?list=PLWPjpkaE-6t1vrewr_yCmSeMUtZCH5kdv" title="Gaming CK Playlist 5" loading="lazy" allowfullscreen></iframe><h3>🏆 PLAYLIST 05</h3></article>
+  </div>
+</section>
+<section id="downloads">
+  <div class="section-top"><div><div class="eyebrow">FILES & EXTRAS</div><h2 class="section-title">GAMING <span>DOWNLOADS</span></h2><p class="section-desc">Add your MediaFire links and matching thumbnails below.</p></div></div>
+  <div class="download-grid">
+    <article class="download-card"><img src="images/bus-mod.jpg" alt="Sri Lanka bus mod"><div class="download-content"><h3>🚌 SRI LANKA BUS MOD</h3><p>Add the bus mod details here.</p><a class="btn btn-outline" href="YOUR_MEDIAFIRE_LINK_HERE" target="_blank" rel="noopener">⬇ DOWNLOAD</a></div></article>
+    <article class="download-card"><img src="images/bus.jpg" alt="BUSSID bus skin"><div class="download-content"><h3>🎨 BUSSID BUS SKIN</h3><p>Add the skin name and details here.</p><a class="btn btn-outline" href="YOUR_MEDIAFIRE_LINK_HERE" target="_blank" rel="noopener">⬇ DOWNLOAD</a></div></article>
+    <article class="download-card"><img src="images/wallpaper.jpg" alt="Gaming wallpaper"><div class="download-content"><h3>⚡ GAMING WALLPAPER</h3><p>Add wallpaper details here.</p><a class="btn btn-outline" href="YOUR_MEDIAFIRE_LINK_HERE" target="_blank" rel="noopener">⬇ DOWNLOAD</a></div></article>
+  </div>
+</section>
 <section id="about">
-
-  <div class="section-heading center">
-    <small>OUR COMMUNITY</small>
-    <h2>ABOUT <span>GAMING CK</span></h2>
-  </div>
-
-  <div class="about-box">
-
-    Welcome to <strong>Gaming CK</strong>! ❤️🎮<br>
-
-    We play different games, share gameplay videos and live streams with our awesome gaming community.<br><br>
-
-    🚌 Bus Simulator Indonesia &nbsp; • &nbsp; ⛏️ Minecraft &nbsp; • &nbsp; 🔥 Free Fire<br>
-
-    🎮 And many more games!<br><br>
-
-    <strong>PLAY • ENJOY • SUBSCRIBE</strong>
-
-  </div>
-
+  <div class="section-top"><div><div class="eyebrow">THE GAMING FAMILY</div><h2 class="section-title">ABOUT <span>GAMING CK</span></h2></div></div>
+  <div class="about-panel">Welcome to <strong>Gaming CK</strong>! ❤️🎮<br>We play different games, share gameplay videos and live streams, and enjoy gaming with our community.<br><br>🚌 Bus Simulator Indonesia &nbsp; • &nbsp; ⛏️ Minecraft &nbsp; • &nbsp; 🔥 Free Fire &nbsp; • &nbsp; 🎮 More Games<br><br><strong>PLAY • ENJOY • SUBSCRIBE</strong></div>
 </section>
-
-<!-- SOCIAL -->
-
 <section>
-
-  <div class="section-heading center">
-    <small>STAY CONNECTED</small>
-    <h2>JOIN <span>OUR COMMUNITY</span></h2>
-    <p>Follow Gaming CK and join our community.</p>
+  <div class="section-top"><div><div class="eyebrow">STAY CONNECTED</div><h2 class="section-title">JOIN THE <span>COMMUNITY</span></h2><p class="section-desc">Follow Gaming CK and keep up with new videos and updates.</p></div></div>
+  <div class="socials">
+    <a class="btn btn-primary" href="https://youtube.com/@gaming-ck-yt?sub_confirmation=1" target="_blank" rel="noopener">▶ YOUTUBE</a>
+    <a class="btn btn-outline" href="https://chat.whatsapp.com/CpyztkBIQX1JmrVftpm7bJ" target="_blank" rel="noopener">WHATSAPP GROUP</a>
+    <a class="btn btn-outline" href="https://discord.gg/MhDxWGmbu" target="_blank" rel="noopener">DISCORD SERVER</a>
+    <a class="btn btn-outline" href="https://whatsapp.com/channel/0029VbCNGxr1yT23bBhDk52J" target="_blank" rel="noopener">WHATSAPP CHANNEL</a>
   </div>
-
-  <div class="social-buttons">
-
-    <a class="btn red" href="https://youtube.com/@gaming-ck-yt" target="_blank" rel="noopener">▶ YOUTUBE</a>
-
-    <a class="btn blue" href="https://youtube.com/@gaming-ck-yt?sub_confirmation=1" target="_blank" rel="noopener">＋ SUBSCRIBE</a>
-
-    <a class="btn" style="background:#20c96b;color:white" href="https://chat.whatsapp.com/CpyztkBIQX1JmrVftpm7bJ" target="_blank" rel="noopener">💬 WHATSAPP GROUP</a>
-
-    <a class="btn" style="background:#5865f2;color:white" href="https://discord.gg/MhDxWGmbu" target="_blank" rel="noopener">🎮 DISCORD</a>
-
-    <a class="btn" style="background:#12a99b;color:white" href="https://whatsapp.com/channel/0029VbCNGxr1yT23bBhDk52J" target="_blank" rel="noopener">📢 WHATSAPP CHANNEL</a>
-
-  </div>
-
 </section>
-
 </main>
-
-<footer>
-  © 2026 GAMING <b>CK</b> | MADE WITH ❤️ FOR GAMERS
-</footer>
-
+<footer>© 2026 GAMING <b>CK</b> — MADE FOR THE GAMING FAMILY ❤️</footer>
 </body>
 </html>
