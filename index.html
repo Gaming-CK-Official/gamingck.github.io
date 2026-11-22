@@ -15,7 +15,8 @@ header{position:sticky;top:0;z-index:10;background:#080d1bf2;padding:18px 6%;dis
 nav{display:flex;gap:17px;flex-wrap:wrap}
 nav a{color:white;text-decoration:none;font-weight:bold}
 nav a:hover{color:#00c8ff}
-.btn{display:inline-block;padding:13px 22px;border-radius:30px;text-decoration:none;font-weight:bold;margin:5px}
+.btn{display:inline-block;padding:13px 22px;border-radius:30px;text-decoration:none;font-weight:bold;margin:5px;transition:.3s}
+.btn:hover{transform:translateY(-3px)}
 .btn-red{background:#ff3048;color:white}
 .btn-blue{border:1px solid #00c8ff;color:#00c8ff}
 .hero{text-align:center;padding:100px 6%;background:radial-gradient(circle at 15% 50%,#004cff55,transparent 40%),radial-gradient(circle at 85% 50%,#ff003b44,transparent 40%),linear-gradient(135deg,#080d1b,#11152c)}
@@ -23,20 +24,24 @@ nav a:hover{color:#00c8ff}
 .hero h1 span{color:#ff3048}
 .hero p{font-size:19px;color:#ccd6e8;margin-bottom:25px}
 .tag{color:#00c8ff;letter-spacing:3px;font-weight:bold}
-section{padding:55px 7%}
+section{padding:55px 7%;scroll-margin-top:85px}
 .title{font-size:32px;margin-bottom:28px}
 .title span{color:#00c8ff}
-.games,.videos{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
-.game,.video{background:#0c1527;border:1px solid #203b5e;padding:28px;border-radius:16px;text-align:center;transition:.3s}
-.game:hover,.video:hover{transform:translateY(-5px);border-color:#00c8ff}
+.games,.videos,.playlists{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
+.game,.video,.playlist-card{background:#0c1527;border:1px solid #203b5e;padding:28px;border-radius:16px;text-align:center;transition:.3s}
+.game:hover,.video:hover,.playlist-card:hover{transform:translateY(-5px);border-color:#00c8ff}
 .emoji{font-size:55px;margin-bottom:15px}
 .game p,.video p{color:#aabbd2;margin-top:10px;line-height:1.6}
 .live{padding:45px 20px;text-align:center;background:linear-gradient(120deg,#260916,#10182c,#260916);border:1px solid #ff3048;border-radius:18px}
 .live h2{font-size:32px;margin-bottom:15px}
 .live p{color:#ccd6e8;margin-bottom:20px}
-.videos iframe{width:100%;height:190px;border:0;border-radius:10px}
+.videos iframe,.playlist-card iframe{display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:10px}
 .videos .video{padding:12px}
 .videos .video h3{padding:12px 0}
+.playlist-card{padding:12px;background:linear-gradient(145deg,#111c31,#080d19);border-color:#39466b}
+.playlist-card:hover{border-color:#a970ff;box-shadow:0 0 22px #853cff33}
+.playlist-card h3{padding:14px 8px 8px;color:#d8c5ff}
+.playlist-note{color:#aabbd2;margin:-12px 0 22px;line-height:1.6}
 .about{background:#0c1527;padding:35px;border-radius:16px;text-align:center;line-height:1.9;color:#ccd6e8}
 .social{text-align:center}
 footer{text-align:center;padding:30px;background:#030610;color:#9baac0;border-top:1px solid #20304b}
@@ -52,18 +57,19 @@ footer span{color:#ff3048}
 <a href="#home">Home</a>
 <a href="#games">Games</a>
 <a href="#videos">Videos</a>
+<a href="#playlists">Playlists</a>
 <a href="#live">Live</a>
 <a href="#about">About</a>
 </nav>
-<a class="btn btn-red" href="https://youtube.com/@gaming-ck-yt?sub_confirmation=1" target="_blank">▶ Subscribe</a>
+<a class="btn btn-red" href="https://youtube.com/@gaming-ck-yt?sub_confirmation=1" target="_blank" rel="noopener">▶ Subscribe</a>
 </header>
 
 <section class="hero" id="home">
 <div class="tag">WELCOME TO MY GAMING WORLD</div>
 <h1>GAMING <span>CK</span></h1>
 <p>Play • Enjoy • Subscribe ❤️</p>
-<a class="btn btn-red" href="https://youtube.com/@gaming-ck-yt/videos" target="_blank">▶ Watch Videos</a>
-<a class="btn btn-blue" href="https://youtube.com/@gaming-ck-yt/live" target="_blank">🔴 Watch Live</a>
+<a class="btn btn-red" href="https://youtube.com/@gaming-ck-yt/videos" target="_blank" rel="noopener">▶ Watch Videos</a>
+<a class="btn btn-blue" href="https://youtube.com/@gaming-ck-yt/live" target="_blank" rel="noopener">🔴 Watch Live</a>
 </section>
 
 <section id="games">
@@ -80,7 +86,7 @@ footer span{color:#ff3048}
 <div class="live">
 <h2>🔴 LIVE WITH GAMING CK</h2>
 <p>Join our gaming family and enjoy playing together!</p>
-<a class="btn btn-red" href="https://youtube.com/@gaming-ck-yt/live" target="_blank">WATCH LIVE NOW</a>
+<a class="btn btn-red" href="https://youtube.com/@gaming-ck-yt/live" target="_blank" rel="noopener">WATCH LIVE NOW</a>
 </div>
 </section>
 
@@ -91,8 +97,41 @@ footer span{color:#ff3048}
 <div class="video">
 <iframe src="https://www.youtube.com/embed/videoseries?list=UUnO4ViTgT7TUVlpJXjU1piA" title="Gaming CK Latest Videos" loading="lazy" allowfullscreen></iframe>
 <h3>Gaming CK Uploads</h3>
-<a class="btn btn-blue" href="https://youtube.com/@gaming-ck-yt/videos" target="_blank">See All Videos</a>
+<a class="btn btn-blue" href="https://youtube.com/@gaming-ck-yt/videos" target="_blank" rel="noopener">See All Videos</a>
 </div>
+</div>
+</section>
+
+<section id="playlists">
+<h2 class="title">🎬 Gaming <span>Playlists</span></h2>
+<p class="playlist-note">Choose your favourite playlist and enjoy watching! ❤️🔥</p>
+<div class="playlists">
+
+<div class="playlist-card">
+<iframe src="https://www.youtube.com/embed/videoseries?list=PLP9Iw43r7jFU" title="Gaming CK Playlist 1" loading="lazy" allowfullscreen></iframe>
+<h3>🎮 Playlist 01</h3>
+</div>
+
+<div class="playlist-card">
+<iframe src="https://www.youtube.com/embed/videoseries?list=PLWPjpkaE-6t0Ec4PRIaAM6-UZBsSpO7_0" title="Gaming CK Playlist 2" loading="lazy" allowfullscreen></iframe>
+<h3>🔥 Playlist 02</h3>
+</div>
+
+<div class="playlist-card">
+<iframe src="https://www.youtube.com/embed/videoseries?list=PLWPjpkaE-6t2MRKnQeFvd_pZK_RcwuwbM" title="Gaming CK Playlist 3" loading="lazy" allowfullscreen></iframe>
+<h3>🚌 Playlist 03</h3>
+</div>
+
+<div class="playlist-card">
+<iframe src="https://www.youtube.com/embed/videoseries?list=PLWPjpkaE-6t3E4cJZ4XW0ZLtPcVmja3cW" title="Gaming CK Playlist 4" loading="lazy" allowfullscreen></iframe>
+<h3>⛏️ Playlist 04</h3>
+</div>
+
+<div class="playlist-card">
+<iframe src="https://www.youtube.com/embed/videoseries?list=PLWPjpkaE-6t1vrewr_yCmSeMUtZCH5kdv" title="Gaming CK Playlist 5" loading="lazy" allowfullscreen></iframe>
+<h3>🏆 Playlist 05</h3>
+</div>
+
 </div>
 </section>
 
@@ -111,7 +150,7 @@ Play • Enjoy • Subscribe ❤️
 
 <section class="social">
 <h2 class="title">🌐 Follow <span>Gaming CK</span></h2>
-<a class="btn btn-red" href="https://youtube.com/@gaming-ck-yt" target="_blank">▶ YouTube Channel</a>
+<a class="btn btn-red" href="https://youtube.com/@gaming-ck-yt" target="_blank" rel="noopener">▶ YouTube Channel</a>
 </section>
 
 <footer>
