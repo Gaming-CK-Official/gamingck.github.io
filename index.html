@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gaming CK | Official Website</title>
+<title>Gaming CK | Official Gaming Website</title>
 
 <style>
 * {
@@ -12,88 +12,116 @@
   box-sizing: border-box;
 }
 
-body {
-  background: #050914;
-  color: white;
-  font-family: Arial, sans-serif;
-}
-
 html {
   scroll-behavior: smooth;
 }
 
-header {
-  background: #080d1b;
-  padding: 18px 7%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 15px;
-  border-bottom: 1px solid #172c49;
-}
-
-.logo {
-  font-size: 27px;
-  font-weight: bold;
+body {
+  font-family: Arial, sans-serif;
+  background: #050711;
   color: white;
 }
 
+:root {
+  --blue: #00c8ff;
+  --red: #ff263b;
+  --dark: #080d1b;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #080b16ee;
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid #18304d;
+  padding: 16px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 900;
+}
+
 .logo span {
-  color: #ff3030;
+  color: var(--red);
 }
 
 nav {
   display: flex;
-  gap: 20px;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 nav a {
-  color: white;
+  color: #ddd;
   text-decoration: none;
   font-weight: bold;
 }
 
 nav a:hover {
-  color: #00c8ff;
+  color: var(--blue);
 }
 
-.subscribe {
-  background: #ff2020;
-  padding: 12px 20px;
-  border-radius: 30px;
-  color: white;
+.btn {
+  display: inline-block;
+  padding: 13px 22px;
   text-decoration: none;
+  border-radius: 30px;
   font-weight: bold;
+  transition: .3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-red {
+  background: var(--red);
+  color: white;
+  box-shadow: 0 0 20px #ff263b44;
+}
+
+.btn-blue {
+  color: var(--blue);
+  border: 1px solid var(--blue);
 }
 
 .hero {
-  min-height: 400px;
-  padding: 70px 8%;
+  padding: 90px 7%;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   background:
-    radial-gradient(circle at 20% 50%, #004bff55, transparent 40%),
-    radial-gradient(circle at 80% 50%, #ff003355, transparent 40%),
-    linear-gradient(135deg, #081329, #050914);
+    radial-gradient(circle at 15% 50%, #004cff40, transparent 40%),
+    radial-gradient(circle at 85% 50%, #ff003b35, transparent 40%),
+    linear-gradient(135deg, #080d1b, #10152a, #080d1b);
+}
+
+.hero .tag {
+  color: var(--blue);
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
 }
 
 .hero h1 {
-  font-size: clamp(40px, 8vw, 80px);
-  margin-bottom: 15px;
+  font-size: clamp(45px, 8vw, 90px);
+  margin-bottom: 20px;
 }
 
 .hero h1 span {
-  color: #ff3030;
+  color: var(--red);
+  text-shadow: 0 0 25px #ff263b66;
 }
 
 .hero p {
-  font-size: 20px;
+  font-size: 19px;
   color: #c6d4e8;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .hero-buttons {
@@ -103,35 +131,17 @@ nav a:hover {
   flex-wrap: wrap;
 }
 
-.button {
-  padding: 14px 24px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
+.section {
+  padding: 55px 7%;
 }
 
-.red {
-  background: #ff2020;
-  color: white;
+.title {
+  font-size: 32px;
+  margin-bottom: 30px;
 }
 
-.blue {
-  border: 2px solid #00baff;
-  color: #00baff;
-}
-
-section {
-  padding: 45px 7%;
-}
-
-.section-title {
-  font-size: 30px;
-  margin-bottom: 25px;
-}
-
-.section-title span {
-  color: #00c8ff;
+.title span {
+  color: var(--blue);
 }
 
 .games {
@@ -140,89 +150,99 @@ section {
   gap: 20px;
 }
 
-.game-card {
-  border: 1px solid #1d385a;
-  background: #0b1425;
-  padding: 25px;
-  border-radius: 15px;
+.game {
+  padding: 28px;
   text-align: center;
-  transition: 0.3s;
+  background: linear-gradient(145deg, #111c31, #080d19);
+  border: 1px solid #1c3554;
+  border-radius: 16px;
+  transition: .3s;
 }
 
-.game-card:hover {
-  transform: translateY(-5px);
-  border-color: #00c8ff;
+.game:hover {
+  transform: translateY(-6px);
+  border-color: var(--blue);
+  box-shadow: 0 0 20px #00c8ff22;
 }
 
-.game-icon {
+.game .emoji {
   font-size: 55px;
   margin-bottom: 15px;
 }
 
-.game-card h3 {
+.game h3 {
   margin-bottom: 10px;
 }
 
-.game-card p {
+.game p {
   color: #9eafc7;
 }
 
-.live {
-  text-align: center;
-  border: 1px solid #ff3030;
-  border-radius: 18px;
-  padding: 35px 20px;
-  background: linear-gradient(135deg, #200914, #10162b);
+.live-section {
+  padding: 30px 7%;
 }
 
-.live h2 {
-  font-size: 32px;
+.live-box {
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 18px;
+  border: 1px solid #ff263b;
+  background: linear-gradient(120deg, #200813, #0a1123, #200813);
+  box-shadow: 0 0 25px #ff263b15;
+}
+
+.live-box h2 {
+  font-size: 35px;
   margin-bottom: 15px;
 }
 
-.live p {
-  color: #c4cce0;
-  margin-bottom: 22px;
+.live-box p {
+  color: #ccd4e2;
+  margin-bottom: 25px;
 }
 
-.video-grid {
+.videos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 20px;
 }
 
-.video-card {
-  background: #0b1425;
-  border: 1px solid #203754;
-  border-radius: 14px;
-  overflow: hidden;
+.video {
+  border: 1px solid #1b3553;
+  background: #0b1221;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  transition: .3s;
 }
 
-.thumbnail {
-  min-height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 65px;
-  background: linear-gradient(135deg, #073d75, #19113f, #750c23);
+.video:hover {
+  border-color: var(--red);
+  transform: translateY(-5px);
 }
 
-.video-card h3 {
-  padding: 15px;
+.video .emoji {
+  font-size: 50px;
+  margin-bottom: 15px;
 }
 
-.video-card a {
-  color: #00c8ff;
-  text-decoration: none;
+.video h3 {
+  margin-bottom: 12px;
 }
 
-.about {
+.video p {
+  color: #9eafc7;
+  margin-bottom: 20px;
+}
+
+.about-box {
+  background: #0b1221;
+  border: 1px solid #1b3553;
+  border-radius: 18px;
+  padding: 35px;
   text-align: center;
   color: #c5d0e0;
-  line-height: 1.8;
-  background: #0a1120;
-  border-radius: 15px;
-  padding: 30px;
+  line-height: 1.9;
 }
 
 .socials {
@@ -230,29 +250,22 @@ section {
 }
 
 .socials a {
-  display: inline-block;
   margin: 8px;
-  padding: 13px 20px;
-  border-radius: 10px;
-  background: #101c30;
-  color: white;
-  text-decoration: none;
-  border: 1px solid #263c5c;
 }
 
 footer {
-  padding: 25px;
   text-align: center;
-  color: #8998ae;
-  background: #030610;
+  padding: 28px 15px;
+  background: #03050b;
   border-top: 1px solid #17243a;
+  color: #8b9ab1;
 }
 
 footer span {
-  color: #ff3030;
+  color: var(--red);
 }
 
-@media (max-width: 600px) {
+@media(max-width:650px) {
   header {
     justify-content: center;
   }
@@ -262,11 +275,15 @@ footer span {
   }
 
   .hero {
-    padding: 55px 5%;
+    padding: 65px 5%;
   }
 
-  section {
-    padding: 35px 5%;
+  .section {
+    padding: 40px 5%;
+  }
+
+  .title {
+    font-size: 27px;
   }
 }
 </style>
@@ -285,126 +302,187 @@ footer span {
     <a href="#about">About</a>
   </nav>
 
-  <a class="subscribe" href="https://www.youtube.com/" target="_blank">
-    ▶ Subscribe
+  <a class="btn btn-red"
+     href="https://youtube.com/@gaming-ck-yt?sub_confirmation=1"
+     target="_blank">
+     ▶ Subscribe
   </a>
 </header>
 
 <section class="hero" id="home">
+
+  <div class="tag">WELCOME TO MY GAMING WORLD</div>
+
   <h1>GAMING <span>CK</span></h1>
 
-  <p>Play • Enjoy • Subscribe 🎮</p>
+  <p>Play • Enjoy • Subscribe ❤️</p>
 
   <div class="hero-buttons">
-    <a href="#games" class="button red">Explore Games</a>
-    <a href="#live" class="button blue">🔴 Live Streams</a>
+
+    <a class="btn btn-red"
+       href="https://youtube.com/@gaming-ck-yt/videos"
+       target="_blank">
+       ▶ Watch Videos
+    </a>
+
+    <a class="btn btn-blue"
+       href="https://youtube.com/@gaming-ck-yt/live"
+       target="_blank">
+       🔴 Watch Live
+    </a>
+
   </div>
 </section>
 
-<section id="games">
-  <h2 class="section-title">🎮 Our <span>Games</span></h2>
+<section class="section" id="games">
+
+  <h2 class="title">🎮 Our <span>Games</span></h2>
 
   <div class="games">
 
-    <div class="game-card">
-      <div class="game-icon">⛏️</div>
+    <div class="game">
+      <div class="emoji">⛏️</div>
       <h3>Minecraft</h3>
-      <p>Survival • Builds • Multiplayer</p>
+      <p>Survival • Multiplayer • Adventures</p>
     </div>
 
-    <div class="game-card">
-      <div class="game-icon">🔥</div>
+    <div class="game">
+      <div class="emoji">🔥</div>
       <h3>Free Fire</h3>
-      <p>Battle • Rank Up • Gameplay</p>
+      <p>Gameplay • Rank • Fun</p>
     </div>
 
-    <div class="game-card">
-      <div class="game-icon">🚌</div>
+    <div class="game">
+      <div class="emoji">🚌</div>
       <h3>BUSSID</h3>
-      <p>Buses • Mods • Maps • Multiplayer</p>
+      <p>Buses • Mods • Multiplayer</p>
     </div>
 
-    <div class="game-card">
-      <div class="game-icon">🎲</div>
+    <div class="game">
+      <div class="emoji">🎮</div>
       <h3>Other Games</h3>
-      <p>Fun gaming adventures</p>
+      <p>New games • Adventures • Fun</p>
     </div>
 
   </div>
 </section>
 
-<section id="live">
-  <div class="live">
-    <h2>🔴 LIVE STREAMS</h2>
-    <p>Come join the Gaming CK family and play with us!</p>
+<section class="live-section" id="live">
 
-    <a href="https://www.youtube.com/" target="_blank"
-       class="button red">
-      ▶ Watch Live
+  <div class="live-box">
+
+    <h2>🔴 LIVE WITH GAMING CK</h2>
+
+    <p>Come join us, play together and enjoy the gaming fun!</p>
+
+    <a class="btn btn-red"
+       href="https://youtube.com/@gaming-ck-yt/live"
+       target="_blank">
+       WATCH LIVE NOW
+    </a>
+
+  </div>
+</section>
+
+<section class="section" id="videos">
+
+  <h2 class="title">📺 Latest <span>Videos</span></h2>
+
+  <div class="videos">
+
+    <div class="video">
+      <div class="emoji">🚌</div>
+      <h3>Bus Gaming</h3>
+      <p>BUSSID gameplay & Sri Lankan buses</p>
+      <a class="btn btn-blue"
+         href="https://youtube.com/@gaming-ck-yt/videos"
+         target="_blank">
+         Watch Videos
+      </a>
+    </div>
+
+    <div class="video">
+      <div class="emoji">⛏️</div>
+      <h3>Minecraft</h3>
+      <p>Survival & multiplayer adventures</p>
+      <a class="btn btn-blue"
+         href="https://youtube.com/@gaming-ck-yt/videos"
+         target="_blank">
+         Watch Videos
+      </a>
+    </div>
+
+    <div class="video">
+      <div class="emoji">🔥</div>
+      <h3>Free Fire</h3>
+      <p>Gameplay & gaming moments</p>
+      <a class="btn btn-blue"
+         href="https://youtube.com/@gaming-ck-yt/videos"
+         target="_blank">
+         Watch Videos
+      </a>
+    </div>
+
+  </div>
+
+  <br><br>
+
+  <div style="text-align:center">
+    <a class="btn btn-red"
+       href="https://youtube.com/@gaming-ck-yt/videos"
+       target="_blank">
+       ▶ SEE ALL MY VIDEOS
     </a>
   </div>
+
 </section>
 
-<section id="videos">
-  <h2 class="section-title">📺 Latest <span>Videos</span></h2>
+<section class="section" id="about">
 
-  <div class="video-grid">
+  <h2 class="title">About <span>Gaming CK</span></h2>
 
-    <div class="video-card">
-      <div class="thumbnail">🚌</div>
-      <h3>BUSSID Gameplay</h3>
-      <h3><a href="https://www.youtube.com/" target="_blank">
-        ▶ Watch Video
-      </a></h3>
-    </div>
+  <div class="about-box">
 
-    <div class="video-card">
-      <div class="thumbnail">⛏️</div>
-      <h3>Minecraft Adventures</h3>
-      <h3><a href="https://www.youtube.com/" target="_blank">
-        ▶ Watch Video
-      </a></h3>
-    </div>
-
-    <div class="video-card">
-      <div class="thumbnail">🔥</div>
-      <h3>Free Fire Gameplay</h3>
-      <h3><a href="https://www.youtube.com/" target="_blank">
-        ▶ Watch Video
-      </a></h3>
-    </div>
-
-  </div>
-</section>
-
-<section id="about">
-  <h2 class="section-title">About <span>Gaming CK</span></h2>
-
-  <div class="about">
-    Welcome to Gaming CK! ❤️🎮
+    Welcome to Gaming CK ❤️🎮
 
     <br><br>
 
-    We play different games, enjoy gaming adventures,
-    livestream with friends and share our gaming moments
+    Gaming CK is a gaming channel where we enjoy different games,
+    share gameplay videos, live streams and gaming adventures
     with our awesome community.
 
     <br><br>
 
+    🚌 Bus Simulator Indonesia
+    <br>
+    ⛏️ Minecraft
+    <br>
+    🔥 Free Fire
+    <br>
+    🎮 More Games
+
+    <br><br>
+
     Play • Enjoy • Subscribe ❤️
+
   </div>
 </section>
 
-<section class="socials">
-  <h2 class="section-title">🌐 Follow <span>Us</span></h2>
+<section class="section socials">
 
-  <a href="https://www.youtube.com/" target="_blank">▶ YouTube</a>
-  <a href="https://discord.com/" target="_blank">💬 Discord</a>
-  <a href="https://www.facebook.com/" target="_blank">📘 Facebook</a>
+  <h2 class="title">🌐 Follow <span>Gaming CK</span></h2>
+
+  <a class="btn btn-red"
+     href="https://youtube.com/@gaming-ck-yt"
+     target="_blank">
+     ▶ YouTube
+  </a>
+
 </section>
 
 <footer>
-  © 2026 Gaming <span>CK</span> | Made with ❤️ for Gamers
+  © 2026 Gaming <span>CK</span> |
+  Made with ❤️ for Gamers
 </footer>
 
 </body>
